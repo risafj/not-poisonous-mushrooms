@@ -1,7 +1,6 @@
 import { Button, TextField } from '@mui/material'
 import type { NextPage } from 'next'
 import Head from 'next/head'
-// import styles from '../styles/Home.module.css'
 import 'tailwindcss/tailwind.css'
 
 const Home: NextPage = () => {
@@ -23,9 +22,9 @@ const Home: NextPage = () => {
         </p>
 
 
-        <div className="flex flex-row flex-grow	w-full items-center">
-          <TextField label="Email address" variant="outlined" fullWidth className="mx-4"/>
-          <Button variant="contained" className="w-40 py-4">Start now</Button>
+        <div className="flex items-center">
+          <TextField label="Email address" variant="outlined" margin="normal" className="mr-4 flex-grow"/>
+          <Button variant="contained" className="flex w-40">Start now</Button>
         </div>
       </main>
 
