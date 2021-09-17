@@ -22,9 +22,9 @@ const Home: NextPage = () => {
         </p>
 
 
-        <div className="flex flex-row flex-grow	w-full items-center">
-          <TextField label="Email address" variant="outlined" fullWidth className="mx-4"/>
-          <Button variant="contained" className="w-40 py-4">Start now</Button>
+        <div className="flex items-center">
+          <TextField label="Email address" variant="outlined" margin="normal" className="mr-4 flex-grow"/>
+          <Button variant="contained" className="flex w-40">Start now</Button>
         </div>
       </main>
 
