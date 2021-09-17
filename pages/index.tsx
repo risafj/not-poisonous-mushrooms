@@ -22,8 +22,8 @@ const Home: NextPage = () => {
         </p>
 
 
-        <div className="flex items-center">
-          <TextField label="Email address" variant="outlined" margin="normal" className="mr-4 flex-grow"/>
+        <div className="flex my-4">
+          <TextField label="Email address" variant="outlined" margin="none" className="mr-4 flex-grow"/>
           <Button variant="contained" className="flex w-40">Start now</Button>
         </div>
       </main>
