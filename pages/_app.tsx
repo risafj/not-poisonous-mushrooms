@@ -1,4 +1,4 @@
-import type { AppProps } from 'next/app'
+import type { AppProps } from 'next/app';
 
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
@@ -17,13 +17,13 @@ const theme = createTheme({
       contrastText: '#fff',
     },
   },
-})
+});
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={ theme }>
-      <Component {...pageProps} />
+      <Component { ...pageProps } />
     </ThemeProvider>
-  )
+  );
 }
-export default MyApp
+export default MyApp;
