@@ -1,7 +1,7 @@
-import { Button, TextField } from '@mui/material'
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import 'tailwindcss/tailwind.css'
+import { Button, TextField } from '@mui/material';
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import 'tailwindcss/tailwind.css';
 
 const Home: NextPage = () => {
   return (
@@ -21,7 +21,6 @@ const Home: NextPage = () => {
           Premium mushrooms at your doorstep, every month.
         </p>
 
-
         <div className="flex flex-col md:flex-row">
           <TextField label="Email address" variant="outlined" className="flex-grow mb-4 md:mr-4 md:mb-0"/>
           <Button variant="contained" className="flex w-40 self-center md:self-auto">Start now</Button>
@@ -32,7 +31,7 @@ const Home: NextPage = () => {
         Risa and Rob
       </footer>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
