@@ -1,3 +1,63 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+  "plugins": [
+    "@typescript-eslint",
+    "react"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    "object-curly-spacing": [
+      "error",
+      "always"
+    ],
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/strict-boolean-expressions": "off",
+    "@typescript-eslint/no-floating-promises": "off",
+    "@typescript-eslint/no-unused-vars": "warn",
+    "@typescript-eslint/require-array-sort-compare": [
+      "error",
+      {
+        "ignoreStringArrays": true
+      }
+    ],
+    "react/jsx-curly-spacing": [
+      "error",
+      {
+        "when": "always",
+        "allowMultiline": true,
+        "children": true
+      }
+    ],
+    // Indent JSX with 2 spaces
+    "react/jsx-indent": [
+      "error",
+      2
+    ],
+    // Indent props with 2 spaces
+    "react/jsx-indent-props": [
+      "error",
+      2
+    ],
+    "eol-last": [
+      "error",
+      "always"
+    ],
+    "no-multiple-empty-lines": [
+      "error",
+      {
+        "max": 1,
+        "maxEOF": 0,
+        "maxBOF": 0
+      }
+    ],
+    "semi": [
+      "error",
+      "always"
+    ]
+  }
 }
