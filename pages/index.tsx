@@ -1,7 +1,11 @@
-import { Button, TextField } from '@mui/material';
+import { AddBoxOutlined, ExitToAppOutlined, LocalOfferOutlined, MailOutlined } from '@mui/icons-material';
+import { Button, Divider, TextField } from '@mui/material';
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import React from 'react';
 import 'tailwindcss/tailwind.css';
+import { DrawerMenu } from '../components/compounds/DrawerMenu';
+import { DrawerMenuItem } from '../components/molecules/DrawerMenuItem';
 
 const Home: NextPage = () => {
   return (
@@ -12,10 +16,19 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex flex-col pt-10 px-4 justify-start">
-        <h1 className="text-5xl mb-auto">
-          NPM
-        </h1>
+      <main className="flex flex-col pt-4 px-4 justify-start">
+        <div className="flex flex-row justify-between items-center">
+          <h1 className="text-4xl">
+            NPM
+          </h1>
+          <DrawerMenu>
+            <DrawerMenuItem icon={ <LocalOfferOutlined /> } label="Pricing" />
+            <DrawerMenuItem icon={ <MailOutlined /> } label="Contact us"/>
+            <Divider variant="middle" />
+            <DrawerMenuItem icon={ <AddBoxOutlined /> } label="Sign up"/>
+            <DrawerMenuItem icon={ <ExitToAppOutlined /> } label="Log in"/>
+          </DrawerMenu>
+        </div>
 
         <p className="text-3xl py-20">
           Premium mushrooms at your doorstep, every month.
