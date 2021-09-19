@@ -40,20 +40,16 @@ const Login: NextPage<{locale: string}> = (props) => {
 };
 
 export const getStaticPaths: GetStaticPaths = () => {
-  // in the filepath, we have [locale].
-  // in nextJS, file names with [KEY] means that we expect
+  // In the filepath, we have [locale].
+  // In NextJS, file names with [KEY] means that we expect
   // to fill that data in at compile time.
-  // the "get static methods" are run at compile time.
-  // To fill in the [KEy], we must return an array of objects.
-  // each object must have the following:
-  // params: { KEY: path_to_show_in_address_bar}
-  // i.e., because we use [locale]
-  // each returned path in the array should have a
-  // locale key with a value of what we want the path to be
+  // The "getStatic" methods are run at compile time.
+  // To fill in the [KEY], we must return an array of objects.
+  // In this case the array would look like this:
+  // [{ params: { locale: 'en' } }, { params: { locale: 'ja' } }]
   return {
-    // note: params seem like the params that are checked during site access ("query params")
     paths: supportedLocales.map(localeString => ({ params: { locale: localeString } })),
-    // render 404. Rendering anything else is not supported on static sites
+    // Render 404. Rendering anything else is not supported on static sites.
     fallback: false
   };
 };
