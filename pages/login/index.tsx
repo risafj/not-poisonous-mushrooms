@@ -6,7 +6,7 @@ import { LoginTemplate } from '../../components/templates/loginTemplate';
 
 const LoginPage: NextPage<{locale: SupportedLocales}> = (props) => (<LoginTemplate { ...props } />);
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getStaticProps: GetStaticProps<{locale: SupportedLocales}> = async ({ params }) => {
   return {
     props: { ...params, locale: 'en' },
   };
