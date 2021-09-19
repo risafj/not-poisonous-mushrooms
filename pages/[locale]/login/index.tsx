@@ -4,7 +4,7 @@ import Head from 'next/head';
 import 'tailwindcss/tailwind.css';
 import { supportedLocales } from '../../../supportedLocales';
 
-const Login: NextPage = (props) => {
+const Login: NextPage<{locale: string}> = (props) => {
   return (
     <div className="h-screen min-h-screen px-2 flex flex-col items-center">
       <Head>
