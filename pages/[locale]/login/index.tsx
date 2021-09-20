@@ -5,7 +5,7 @@ import { SupportedLocale } from '../../../@types/';
 import { LoginTemplate } from '../../../components/templates/LoginTemplate';
 import { createNonEnglishPaths } from '../../../supportedLocales';
 
-const LoginPage: NextPage<{locale: SupportedLocale}> = (props) => (<LoginTemplate { ...props } />);
+const LoginPage: NextPage<{ locale: SupportedLocale }> = (props) => (<LoginTemplate { ...props } />);
 
 export const getStaticPaths: GetStaticPaths = createNonEnglishPaths;
 

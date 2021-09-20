@@ -4,8 +4,9 @@ import Head from 'next/head';
 import 'tailwindcss/tailwind.css';
 import { Button, TextField } from '@mui/material';
 import { LocalizedLink } from '../atoms/LocalizedLink';
+import { Header } from '../compounds/Header';
 
-export const LoginTemplate: TopLevelTemplate = (props) => {
+export const LoginTemplate: TopLevelTemplate = ({ locale }) => {
   return (
     <div className="h-screen min-h-screen px-2 flex flex-col items-center">
       <Head>
@@ -15,19 +16,17 @@ export const LoginTemplate: TopLevelTemplate = (props) => {
       </Head>
 
       <main className="flex flex-col pt-10 px-4 justify-start">
-        <h1 className="text-5xl mb-auto">
-          NPM
-        </h1>
+        <Header locale={ locale } />
 
         <pre>
-          { props.locale === 'en' ? 'English Login' : '日本語 Baybeeee' }
+          { locale === 'en' ? 'English Login' : '日本語 Baybeeee' }
         </pre>
 
         <p className="text-3xl py-20">
           Log in to buy even more mushrooms!
         </p>
 
-        <LocalizedLink currentLocale={ props.locale } path='/' newLocale='en' >
+        <LocalizedLink currentLocale={ locale } path='/'>
           { "Or don't :(" }
         </LocalizedLink>
 
