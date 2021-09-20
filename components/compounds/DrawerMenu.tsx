@@ -3,6 +3,7 @@ import { Drawer, IconButton } from '@mui/material';
 import React, { useCallback, useState } from 'react';
 
 type Props = {
+  className?: string
   children: React.ReactNode
 }
 
@@ -12,7 +13,7 @@ export const DrawerMenu = (props: Props) => {
   const toggleDrawer = useCallback(() => setIsOpen(!isOpen), [isOpen]);
 
   return (
-    <>
+    <div className={ props.className }>
       <IconButton onClick={ toggleDrawer }>
         <Menu fontSize="large" />
       </IconButton>
@@ -26,6 +27,6 @@ export const DrawerMenu = (props: Props) => {
           { props.children }
         </div>
       </Drawer>
-    </>
+    </div>
   );
 };

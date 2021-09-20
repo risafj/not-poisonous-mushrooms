@@ -21,7 +21,7 @@ const Home: NextPage = () => {
           <h1 className="text-4xl">
             NPM
           </h1>
-          <DrawerMenu>
+          <DrawerMenu className="md:hidden">
             <DrawerMenuItem icon={ <LocalOfferOutlined /> } label="Pricing" />
             <DrawerMenuItem icon={ <MailOutlined /> } label="Contact us"/>
             <Divider variant="middle" />
