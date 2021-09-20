@@ -1,10 +1,12 @@
 import { Button, TextField, Typography } from '@mui/material';
 import Head from 'next/head';
+import Image from 'next/image';
 import React from 'react';
 import 'tailwindcss/tailwind.css';
 import { TopLevelTemplate } from '../../@types';
 import { Section } from '../atoms/Section';
 import { Header } from '../compounds/Header';
+import { FeatureSection } from '../molecules/FeatureSection';
 
 export const HomeTemplate: TopLevelTemplate = (props) => {
   return (
@@ -30,7 +32,23 @@ export const HomeTemplate: TopLevelTemplate = (props) => {
         </Section>
 
         <Section backgroundColor="primary.background">
-          <Typography>Test</Typography>
+          <FeatureSection
+            firstElement={
+              <Typography
+                variant="h4"
+              >
+                Organic, locally sourced, free-range mushrooms.
+              </Typography>
+            }
+            secondElement={
+              <Image
+                src="https://media.giphy.com/media/kHHG2z1NlotnXTXfDO/giphy.gif"
+                alt="dancing mushroom"
+                width={ 200 }
+                height={ 200 }
+              />
+             }
+          />
         </Section>
       </main>
 
