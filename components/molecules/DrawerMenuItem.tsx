@@ -8,15 +8,13 @@ type Props = {
 
 export const DrawerMenuItem = ({ icon, label }: Props) => {
   return (
-    <>
-      <MenuItem>
-        <ListItemIcon>
-          { icon }
-        </ListItemIcon>
-        <ListItemText>
-          { label }
-        </ListItemText>
-      </MenuItem>
-    </>
+    <MenuItem>
+      <ListItemIcon>
+        { icon }
+      </ListItemIcon>
+      <ListItemText>
+        { label }
+      </ListItemText>
+    </MenuItem>
   );
 };
