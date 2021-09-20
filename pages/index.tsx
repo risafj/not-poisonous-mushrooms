@@ -6,7 +6,7 @@ import { HomeTemplate } from '../components/templates/HomeTemplate';
 const HomePage: NextPage<{ locale: SupportedLocale }> = (props) => (<HomeTemplate { ...props }/>);
 
 export const getStaticProps: GetStaticProps<{ locale: SupportedLocale }> = ({ params }) => {
-  return { props: { ...params, locale: 'en' }, };
+  return { props: { ...params, locale: 'en' } };
 };
 
 export default HomePage;
