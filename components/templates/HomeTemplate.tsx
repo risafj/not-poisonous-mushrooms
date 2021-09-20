@@ -1,7 +1,9 @@
-import { Button, TextField } from '@mui/material';
+import { Button, TextField, Typography } from '@mui/material';
 import Head from 'next/head';
+import React from 'react';
 import 'tailwindcss/tailwind.css';
 import { TopLevelTemplate } from '../../@types';
+import { Header } from '../compounds/Header';
 
 export const HomeTemplate: TopLevelTemplate = (props) => {
   return (
@@ -12,14 +14,12 @@ export const HomeTemplate: TopLevelTemplate = (props) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex flex-col pt-10 px-4 justify-start">
-        <h1 className="text-5xl mb-auto">
-          NPM
-        </h1>
+      <main className="flex flex-col pt-4 px-4 justify-start">
+        <Header />
 
-        <p className="text-3xl py-20">
+        <Typography variant="h4" component="h2" className="py-20">
           Premium { props.locale === 'en' ? 'mushrooms' : '椎茸' } at your doorstep, every month.
-        </p>
+        </Typography>
 
         <div className="flex flex-col md:flex-row">
           <TextField label="Email address" variant="outlined" className="flex-grow mb-4 md:mr-4 md:mb-0"/>
@@ -27,9 +27,9 @@ export const HomeTemplate: TopLevelTemplate = (props) => {
         </div>
       </main>
 
-      <footer className="pt-10">
+      <Typography className="pt-10">
         Risa and Rob
-      </footer>
+      </Typography>
     </div>
   );
 };
