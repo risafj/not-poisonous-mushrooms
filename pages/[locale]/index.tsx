@@ -1,11 +1,11 @@
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import React from 'react';
 import 'tailwindcss/tailwind.css';
-import { SupportedLocales } from '../../@types';
+import { SupportedLocale } from '../../@types';
 import { HomeTemplate } from '../../components/templates/HomeTemplate';
 import { createNonEnglishPaths } from '../../supportedLocales';
 
-const HomePage: NextPage<{locale: SupportedLocales}> = (props) => (<HomeTemplate { ...props } />);
+const HomePage: NextPage<{locale: SupportedLocale}> = (props) => (<HomeTemplate { ...props } />);
 
 export const getStaticPaths: GetStaticPaths = createNonEnglishPaths;
 

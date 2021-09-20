@@ -1,11 +1,11 @@
 import type { GetStaticProps, NextPage } from 'next';
 import 'tailwindcss/tailwind.css';
-import { SupportedLocales } from '../@types';
+import { SupportedLocale } from '../@types';
 import { HomeTemplate } from '../components/templates/HomeTemplate';
 
-const HomePage: NextPage<{locale: SupportedLocales}> = (props) => (<HomeTemplate { ...props }/>);
+const HomePage: NextPage<{locale: SupportedLocale}> = (props) => (<HomeTemplate { ...props }/>);
 
-export const getStaticProps: GetStaticProps<{locale: SupportedLocales}> = ({ params }) => {
+export const getStaticProps: GetStaticProps<{locale: SupportedLocale}> = ({ params }) => {
   return {
     props: { ...params, locale: 'en' },
   };

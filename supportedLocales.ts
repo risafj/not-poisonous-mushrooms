@@ -1,5 +1,5 @@
 import { GetStaticProps } from "next";
-import { SupportedLocales } from "./@types";
+import { SupportedLocale } from "./@types";
 
 const supportedNonEnglishLocales = ['ja'];
 
@@ -18,6 +18,6 @@ export const createNonEnglishPaths = () => {
   };
 };
 
-export const staticEnglishProps: GetStaticProps<{locale: SupportedLocales}> = ({ params }) => (
+export const staticEnglishProps: GetStaticProps<{locale: SupportedLocale}> = ({ params }) => (
   { props: { ...params, locale: 'en' } }
 );
