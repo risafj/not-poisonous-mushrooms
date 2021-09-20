@@ -22,16 +22,15 @@ export const staticEnglishProps: GetStaticProps<{ locale: SupportedLocale }> = (
   { props: { ...params, locale: 'en' } }
 );
 
-// closing braces same match line?
-// spaces inside single line types
-// semicolon always same line
-
 type LanguageDefinition = { code: SupportedLocale, displayName: string };
+
 export const languageDefinitions: LanguageDefinition[] = [
-  { code: 'en',
+  {
+    code: 'en',
     displayName: 'English'
   },
   {
     code:'ja',
-    displayName: '日本語' }
+    displayName: '日本語' 
+  }
 ];
