@@ -94,6 +94,10 @@
       {
         "multiline": true
       }
+    ],
+    "implicit-arrow-linebreak": [
+      "error",
+      "beside"
     ]
   }
 }
