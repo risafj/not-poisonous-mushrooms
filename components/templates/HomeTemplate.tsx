@@ -5,7 +5,7 @@ import 'tailwindcss/tailwind.css';
 import { TopLevelTemplate } from '../../@types';
 import { Header } from '../compounds/Header';
 
-export const HomeTemplate: TopLevelTemplate = (props) => {
+export const HomeTemplate: TopLevelTemplate = ({ locale }) => {
   return (
     <div className="h-screen min-h-screen px-2 flex flex-col items-center">
       <Head>
@@ -15,10 +15,10 @@ export const HomeTemplate: TopLevelTemplate = (props) => {
       </Head>
 
       <main className="flex flex-col pt-4 px-4 justify-start">
-        <Header />
+        <Header locale={ locale } />
 
         <Typography variant="h4" component="h2" className="py-20">
-          Premium { props.locale === 'en' ? 'mushrooms' : '椎茸' } at your doorstep, every month.
+          Premium { locale === 'en' ? 'mushrooms' : '椎茸' } at your doorstep, every month.
         </Typography>
 
         <div className="flex flex-col md:flex-row">
