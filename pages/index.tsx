@@ -8,6 +8,18 @@ import { DrawerMenu } from '../components/compounds/DrawerMenu';
 import { DrawerMenuItem } from '../components/molecules/DrawerMenuItem';
 
 const Home: NextPage = () => {
+  const drawerMenu = () => {
+    return (
+      <DrawerMenu className="md:hidden">
+        <DrawerMenuItem icon={ <LocalOfferOutlined /> } label="Pricing" />
+        <DrawerMenuItem icon={ <MailOutlined /> } label="Contact us"/>
+        <Divider variant="middle" />
+        <DrawerMenuItem icon={ <AddBoxOutlined /> } label="Sign up"/>
+        <DrawerMenuItem icon={ <ExitToAppOutlined /> } label="Log in"/>
+      </DrawerMenu>
+    );
+  };
+
   return (
     <div className="h-screen min-h-screen px-2 flex flex-col items-center">
       <Head>
@@ -21,13 +33,7 @@ const Home: NextPage = () => {
           <Typography variant="h4" component="h1">
             NPM
           </Typography>
-          <DrawerMenu className="md:hidden">
-            <DrawerMenuItem icon={ <LocalOfferOutlined /> } label="Pricing" />
-            <DrawerMenuItem icon={ <MailOutlined /> } label="Contact us"/>
-            <Divider variant="middle" />
-            <DrawerMenuItem icon={ <AddBoxOutlined /> } label="Sign up"/>
-            <DrawerMenuItem icon={ <ExitToAppOutlined /> } label="Log in"/>
-          </DrawerMenu>
+          { drawerMenu() }
         </div>
 
         <Typography variant="h4" component="h2" className="py-20">
