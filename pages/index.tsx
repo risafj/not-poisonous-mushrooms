@@ -1,5 +1,5 @@
 import { AddBoxOutlined, ExitToAppOutlined, LocalOfferOutlined, MailOutlined } from '@mui/icons-material';
-import { Button, Divider, TextField } from '@mui/material';
+import { Button, Divider, TextField, Typography } from '@mui/material';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import React from 'react';
@@ -18,9 +18,9 @@ const Home: NextPage = () => {
 
       <main className="flex flex-col pt-4 px-4 justify-start">
         <div className="flex flex-row justify-between items-center">
-          <h1 className="text-4xl">
+          <Typography variant="h4" component="h1">
             NPM
-          </h1>
+          </Typography>
           <DrawerMenu className="md:hidden">
             <DrawerMenuItem icon={ <LocalOfferOutlined /> } label="Pricing" />
             <DrawerMenuItem icon={ <MailOutlined /> } label="Contact us"/>
@@ -30,9 +30,9 @@ const Home: NextPage = () => {
           </DrawerMenu>
         </div>
 
-        <p className="text-3xl py-20">
+        <Typography variant="h4" component="h2" className="py-20">
           Premium mushrooms at your doorstep, every month.
-        </p>
+        </Typography>
 
         <div className="flex flex-col md:flex-row">
           <TextField label="Email address" variant="outlined" className="flex-grow mb-4 md:mr-4 md:mb-0"/>
@@ -40,9 +40,9 @@ const Home: NextPage = () => {
         </div>
       </main>
 
-      <footer className="pt-10">
+      <Typography className="pt-10">
         Risa and Rob
-      </footer>
+      </Typography>
     </div>
   );
 };

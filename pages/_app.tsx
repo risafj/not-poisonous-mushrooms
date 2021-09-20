@@ -1,6 +1,7 @@
 import type { AppProps } from 'next/app';
 
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { CssBaseline } from '@mui/material';
 
 const theme = createTheme({
   palette: {
@@ -16,12 +17,16 @@ const theme = createTheme({
       dark: '#3b0200',
       contrastText: '#fff',
     },
+    text: {
+      primary: '#444444'
+    }
   },
 });
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={ theme }>
+      <CssBaseline />
       <Component { ...pageProps } />
     </ThemeProvider>
   );
