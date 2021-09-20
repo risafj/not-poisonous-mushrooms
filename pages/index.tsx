@@ -8,15 +8,28 @@ import { DrawerMenu } from '../components/compounds/DrawerMenu';
 import { DrawerMenuItem } from '../components/molecules/DrawerMenuItem';
 
 const Home: NextPage = () => {
-  const drawerMenu = () => {
+  const menu = () => {
     return (
-      <DrawerMenu className="md:hidden">
-        <DrawerMenuItem icon={ <LocalOfferOutlined /> } label="Pricing" />
-        <DrawerMenuItem icon={ <MailOutlined /> } label="Contact us"/>
-        <Divider variant="middle" />
-        <DrawerMenuItem icon={ <AddBoxOutlined /> } label="Sign up"/>
-        <DrawerMenuItem icon={ <ExitToAppOutlined /> } label="Log in"/>
-      </DrawerMenu>
+      <>
+        <div className="hidden md:flex flex-row justify-between w-96">
+          <Button variant="text" color="secondary">
+            Pricing
+          </Button>
+          <Button variant="text" color="secondary">
+            Contact us
+          </Button>
+          <Button variant="contained" color="secondary">
+            Login
+          </Button>
+        </div>
+        <DrawerMenu className="md:hidden">
+          <DrawerMenuItem icon={ <LocalOfferOutlined /> } label="Pricing" />
+          <DrawerMenuItem icon={ <MailOutlined /> } label="Contact us" />
+          <Divider variant="middle" />
+          <DrawerMenuItem icon={ <AddBoxOutlined /> } label="Sign up" />
+          <DrawerMenuItem icon={ <ExitToAppOutlined /> } label="Log in" />
+        </DrawerMenu>
+      </>
     );
   };
 
@@ -30,10 +43,10 @@ const Home: NextPage = () => {
 
       <main className="flex flex-col pt-4 px-4 justify-start">
         <div className="flex flex-row justify-between items-center">
-          <Typography variant="h4" component="h1">
+          <Typography variant="h3" component="h1">
             NPM
           </Typography>
-          { drawerMenu() }
+          { menu() }
         </div>
 
         <Typography variant="h4" component="h2" className="py-20">
