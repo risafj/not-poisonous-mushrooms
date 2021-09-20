@@ -1,6 +1,7 @@
 import React from "react";
 import Link from 'next/link';
 import { SupportedLocale } from "../../@types";
+import { pathFromComponents } from "../../utils/linking";
 
 type Props = {
   currentLocale: SupportedLocale
@@ -10,14 +11,8 @@ type Props = {
 };
 
 export const LocalizedLink = ({ currentLocale, path, children, newLocale }: Props) => {
-  // if current locale is en, remove from path
-  let outgoingLocale = currentLocale === 'en' ? '' : `/${currentLocale}`;
-  if (newLocale) {
-    // if new locale is en, remove from path
-    outgoingLocale = newLocale === 'en' ? '' : `${newLocale}`;
-  }
   return (
-    <Link href={ `${outgoingLocale}${path}` }>
+    <Link href={ pathFromComponents(currentLocale, path, newLocale) }>
       { children }
     </Link>
   );
