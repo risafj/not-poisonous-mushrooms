@@ -1,7 +1,7 @@
 import { Button, TextField } from '@mui/material';
 import Head from 'next/head';
 import 'tailwindcss/tailwind.css';
-import { TopLevelTemplate } from '../../@types/types';
+import { TopLevelTemplate } from '../../@types';
 
 export const HomeTemplate: TopLevelTemplate = (props) => {
   return (

@@ -1,7 +1,7 @@
 import type { GetStaticProps, NextPage } from 'next';
 import React from 'react';
 import 'tailwindcss/tailwind.css';
-import { SupportedLocales } from '../../@types/types';
+import { SupportedLocales } from '../../@types';
 import { LoginTemplate } from '../../components/templates/loginTemplate';
 
 const LoginPage: NextPage<{locale: SupportedLocales}> = (props) => (<LoginTemplate { ...props } />);

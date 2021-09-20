@@ -1,7 +1,7 @@
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import React from 'react';
 import 'tailwindcss/tailwind.css';
-import { SupportedLocales } from '../../@types/types';
+import { SupportedLocales } from '../../@types';
 import { HomeTemplate } from '../../components/templates/homeTemplate';
 import { createNonEnglishPaths } from '../../supportedLocales';
 

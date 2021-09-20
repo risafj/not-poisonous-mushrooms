@@ -1,5 +1,5 @@
 import React from 'react';
-import { TopLevelTemplate } from '../../@types/types';
+import { TopLevelTemplate } from '../../@types';
 import Head from 'next/head';
 import 'tailwindcss/tailwind.css';
 import { Button, TextField } from '@mui/material';
