@@ -35,10 +35,7 @@ export const FeatureSection = ({ text, imageElement, isImageOnLeft = false }: Pr
       </div>
 
       <div className="hidden md:flex md:flex-row">
-        { !isImageOnLeft && (
-          <TextSection text={ text } />
-
-        ) }
+        { !isImageOnLeft && <TextSection text={ text } /> }
         <ImageSection imageElement={ imageElement } />
         { isImageOnLeft && <TextSection text={ text } /> }
       </div>
