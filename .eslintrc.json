@@ -11,7 +11,8 @@
     "project": "./tsconfig.json"
   },
   "rules": {
-    "object-curly-spacing": [
+    "object-curly-spacing": "off",
+    "@typescript-eslint/object-curly-spacing": [
       "error",
       "always"
     ],
@@ -67,6 +68,26 @@
         "before": true,
         "after": true
       }
+    ],
+    "@typescript-eslint/indent": [
+      "error",
+      2,
+      {
+        "ignoredNodes": [
+          "TSTypeParameterInstantiation"
+        ]
+      }
+    ],
+    "semi-spacing": [
+      "error",
+      {
+        "before": false,
+        "after": true
+      }
+    ],
+    "semi-style": [
+      "error",
+      "last"
     ]
   }
 }
