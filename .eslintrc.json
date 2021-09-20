@@ -33,6 +33,7 @@
         "children": true
       }
     ],
+    "react/jsx-no-useless-fragment": "error",
     // Indent JSX with 2 spaces
     "react/jsx-indent": [
       "error",
