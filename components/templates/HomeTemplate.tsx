@@ -74,8 +74,8 @@ export const HomeTemplate: TopLevelTemplate = (props) => {
             Premium { props.locale === 'en' ? 'mushrooms' : '椎茸' } at your doorstep, every month.
           </Typography>
 
-          <div className="flex flex-col md:flex-row">
-            <TextField label="Email address" variant="outlined" className="flex-grow mb-4 md:mr-4 md:mb-0"/>
+          <div className="flex flex-col md:flex-row md:justify-center">
+            <TextField label="Email address" variant="outlined" className="flex-grow max-w-lg mb-4 md:mr-4 md:mb-0"/>
             <Button variant="contained" className="flex w-40 self-center md:self-auto">Start now</Button>
           </div>
         </Section>
