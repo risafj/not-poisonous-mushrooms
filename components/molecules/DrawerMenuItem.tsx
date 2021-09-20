@@ -4,7 +4,7 @@ import React from 'react';
 type Props = {
   icon: React.ReactNode
   label: string
-}
+};
 
 export const DrawerMenuItem = ({ icon, label }: Props) => {
   return (
@@ -13,7 +13,9 @@ export const DrawerMenuItem = ({ icon, label }: Props) => {
         <ListItemIcon>
           { icon }
         </ListItemIcon>
-        <ListItemText>{ label }</ListItemText>
+        <ListItemText>
+          { label }
+        </ListItemText>
       </MenuItem>
     </>
   );
