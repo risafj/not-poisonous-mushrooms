@@ -4,6 +4,7 @@ import Image from 'next/image';
 import React from 'react';
 import 'tailwindcss/tailwind.css';
 import { TopLevelTemplate } from '../../@types';
+import { assetUrls } from '../../utils/assetUrls';
 import { Section } from '../atoms/Section';
 import { Header } from '../compounds/Header';
 import { FeatureSection } from '../molecules/FeatureSection';
@@ -16,8 +17,8 @@ return (
         text="Organic, locally sourced, free-range mushrooms."
         imageElement={
           <Image
-            src="https://3.bp.blogspot.com/-SM2FKN6pNMM/W8hDqITydSI/AAAAAAABPec/jO2ycWVDZE08IHgxpQMW4iRxdyLi_SzTQCLcBGAs/s800/character_kinoko.png"
-            alt="dancing mushroom"
+            src={ assetUrls.happyMushroom }
+            alt="happy mushroom"
             width={ 200 }
             height={ 200 }
           />
@@ -31,8 +32,7 @@ return (
           <iframe
             width="560"
             height="315"
-            src="https://www.youtube.com/embed/wnn7icKnr4E"
-            title="YouTube video player"
+            src={ assetUrls.qaTeam }
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
@@ -46,7 +46,7 @@ return (
         text="Loreming the ipsums. There should be 3 sections."
         imageElement={
           <Image
-            src="https://3.bp.blogspot.com/-SM2FKN6pNMM/W8hDqITydSI/AAAAAAABPec/jO2ycWVDZE08IHgxpQMW4iRxdyLi_SzTQCLcBGAs/s800/character_kinoko.png"
+            src={ assetUrls.happyMushroom }
             alt="dancing mushroom"
             width={ 200 }
             height={ 200 }
