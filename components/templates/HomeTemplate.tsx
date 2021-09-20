@@ -1,38 +1,11 @@
-import { AddBoxOutlined, ExitToAppOutlined, LocalOfferOutlined, MailOutlined } from '@mui/icons-material';
-import { Button, Divider, TextField, Typography } from '@mui/material';
+import { Button, TextField, Typography } from '@mui/material';
 import Head from 'next/head';
 import React from 'react';
 import 'tailwindcss/tailwind.css';
-import { DrawerMenu } from '../../components/compounds/DrawerMenu';
-import { DrawerMenuItem } from '../../components/molecules/DrawerMenuItem';
 import { TopLevelTemplate } from '../../@types';
+import { Header } from '../compounds/Header';
 
 export const HomeTemplate: TopLevelTemplate = (props) => {
-  const menu = () => {
-    return (
-      <>
-        <div className="hidden md:flex flex-row justify-between w-96">
-          <Button variant="text" color="secondary">
-            Pricing
-          </Button>
-          <Button variant="text" color="secondary">
-            Contact us
-          </Button>
-          <Button variant="contained" color="secondary">
-            Login
-          </Button>
-        </div>
-        <DrawerMenu className="md:hidden">
-          <DrawerMenuItem icon={ <LocalOfferOutlined /> } label="Pricing" />
-          <DrawerMenuItem icon={ <MailOutlined /> } label="Contact us" />
-          <Divider variant="middle" />
-          <DrawerMenuItem icon={ <AddBoxOutlined /> } label="Sign up" />
-          <DrawerMenuItem icon={ <ExitToAppOutlined /> } label="Log in" />
-        </DrawerMenu>
-      </>
-    );
-  };
-
   return (
     <div className="h-screen min-h-screen px-2 flex flex-col items-center">
       <Head>
@@ -42,12 +15,7 @@ export const HomeTemplate: TopLevelTemplate = (props) => {
       </Head>
 
       <main className="flex flex-col pt-4 px-4 justify-start">
-        <div className="flex flex-row justify-between items-center">
-          <Typography variant="h3" component="h1">
-            NPM
-          </Typography>
-          { menu() }
-        </div>
+        <Header />
 
         <Typography variant="h4" component="h2" className="py-20">
           Premium { props.locale === 'en' ? 'mushrooms' : '椎茸' } at your doorstep, every month.
