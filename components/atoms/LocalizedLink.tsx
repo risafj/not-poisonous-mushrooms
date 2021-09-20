@@ -10,14 +10,15 @@ type Props = {
 };
 
 export const LocalizedLink = ({ currentLocale, path, children, newLocale }: Props) => {
-  let outgoingLocale = `/${currentLocale}`;
-  if(newLocale) {
+  // if current locale is en, remove from path
+  let outgoingLocale = currentLocale === 'en' ? '' : `/${currentLocale}`;
+  if (newLocale) {
+    // if new locale is en, remove from path
     outgoingLocale = newLocale === 'en' ? '' : `${newLocale}`;
   }
   return (
-    <Link href={ `${outgoingLocale}/${path}` }>
+    <Link href={ `${outgoingLocale}${path}` }>
       { children }
     </Link>
   );
-  // else, redirect with the new locale
 };

@@ -3,6 +3,7 @@ import { TopLevelTemplate } from '../../@types';
 import Head from 'next/head';
 import 'tailwindcss/tailwind.css';
 import { Button, TextField } from '@mui/material';
+import { LocalizedLink } from '../atoms/LocalizedLink';
 
 export const LoginTemplate: TopLevelTemplate = (props) => {
   return (
@@ -25,6 +26,10 @@ export const LoginTemplate: TopLevelTemplate = (props) => {
         <p className="text-3xl py-20">
           Log in to buy even more mushrooms!
         </p>
+
+        <LocalizedLink currentLocale={ props.locale } path='/' newLocale='en' >
+          { "Or don't :(" }
+        </LocalizedLink>
 
         <div className="flex flex-col md:flex-row">
           <TextField label="Email address" variant="outlined" className="flex-grow mb-4 md:mr-4 md:mb-0"/>
