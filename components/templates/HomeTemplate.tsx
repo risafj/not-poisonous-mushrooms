@@ -3,6 +3,7 @@ import Head from 'next/head';
 import React from 'react';
 import 'tailwindcss/tailwind.css';
 import { TopLevelTemplate } from '../../@types';
+import { Section } from '../atoms/Section';
 import { Header } from '../compounds/Header';
 
 export const HomeTemplate: TopLevelTemplate = (props) => {
@@ -14,22 +15,30 @@ export const HomeTemplate: TopLevelTemplate = (props) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex flex-col pt-4 px-4 justify-start">
-        <Header />
+      <main className="flex flex-col justify-start">
+        <Section>
+          <Header />
 
-        <Typography variant="h4" component="h2" className="py-20">
-          Premium { props.locale === 'en' ? 'mushrooms' : '椎茸' } at your doorstep, every month.
-        </Typography>
+          <Typography variant="h4" component="h2" className="py-20">
+            Premium { props.locale === 'en' ? 'mushrooms' : '椎茸' } at your doorstep, every month.
+          </Typography>
 
-        <div className="flex flex-col md:flex-row">
-          <TextField label="Email address" variant="outlined" className="flex-grow mb-4 md:mr-4 md:mb-0"/>
-          <Button variant="contained" className="flex w-40 self-center md:self-auto">Start now</Button>
-        </div>
+          <div className="flex flex-col md:flex-row">
+            <TextField label="Email address" variant="outlined" className="flex-grow mb-4 md:mr-4 md:mb-0"/>
+            <Button variant="contained" className="flex w-40 self-center md:self-auto">Start now</Button>
+          </div>
+        </Section>
+
+        <Section backgroundColor="primary.background">
+          <Typography>Test</Typography>
+        </Section>
       </main>
 
-      <Typography className="pt-10">
-        Risa and Rob
-      </Typography>
+      <Section>
+        <Typography>
+          Risa and Rob
+        </Typography>
+      </Section>
     </div>
   );
 };
