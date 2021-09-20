@@ -18,6 +18,19 @@ export const createNonEnglishPaths = () => {
   };
 };
 
-export const staticEnglishProps: GetStaticProps<{locale: SupportedLocale}> = ({ params }) => (
+export const staticEnglishProps: GetStaticProps<{ locale: SupportedLocale }> = ({ params }) => (
   { props: { ...params, locale: 'en' } }
 );
+
+type LanguageDefinition = { code: SupportedLocale, displayName: string };
+
+export const languageDefinitions: LanguageDefinition[] = [
+  {
+    code: 'en',
+    displayName: 'English'
+  },
+  {
+    code:'ja',
+    displayName: '日本語' 
+  }
+];

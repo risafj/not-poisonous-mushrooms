@@ -5,8 +5,8 @@ import { SupportedLocale } from '../../@types';
 import { LoginTemplate } from '../../components/templates/LoginTemplate';
 import { staticEnglishProps } from '../../supportedLocales';
 
-const LoginPage: NextPage<{locale: SupportedLocale}> = (props) => (<LoginTemplate { ...props } />);
+const LoginPage: NextPage<{ locale: SupportedLocale }> = (props) => (<LoginTemplate { ...props } />);
 
-export const getStaticProps: GetStaticProps<{locale: SupportedLocale}> = staticEnglishProps;
+export const getStaticProps: GetStaticProps<{ locale: SupportedLocale }> = staticEnglishProps;
 
 export default LoginPage;
