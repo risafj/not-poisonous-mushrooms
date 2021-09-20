@@ -7,9 +7,11 @@ type Props = {
   isImageOnLeft?: boolean
 };
 
+const containerClassNames = "flex flex-row items-center justify-center md:w-6/12 md:px-4";
+
 const TextSection = ({ text }: Pick<Props, 'text'> ) => {
   return (
-    <div className={ "flex flex-row items-center justify-center md:w-6/12 md:px-4" }>
+    <div className={ containerClassNames }>
       <Typography variant="h4">
         { text }
       </Typography>
@@ -19,7 +21,7 @@ const TextSection = ({ text }: Pick<Props, 'text'> ) => {
 
 const ImageSection = ({ imageElement }: Pick<Props, 'imageElement'>) => {
   return (
-    <div className="flex flex-row items-center justify-center md:w-6/12 md:px-4">
+    <div className={ containerClassNames }>
       { imageElement }
     </div>
   );
