@@ -88,6 +88,12 @@
     "semi-style": [
       "error",
       "last"
+    ],
+    "object-curly-newline": [
+      "error",
+      {
+        "multiline": true
+      }
     ]
   }
 }
