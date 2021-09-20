@@ -55,7 +55,8 @@
         "maxBOF": 0
       }
     ],
-    "semi": [
+    "semi": "off",
+    "@typescript-eslint/semi": [
       "error",
       "always"
     ]
