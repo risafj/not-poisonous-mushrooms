@@ -12,10 +12,10 @@ export const LanguagePicker = React.memo<{ locale: SupportedLocale }>(({ locale 
   // if we are not en, our current path will have /locale/ at the front, which we should remove
   // if we have /ja, we can just remove ja
   // if we have /ja/page, we should remove the redundant slash
-  const currentPath = locale === 'en' ? router.asPath : router.asPath.replace(`${locale}`, '').replace("//", "/");
+  const pathWithNoLocale = locale === 'en' ? router.asPath : router.asPath.replace(`${locale}`, '').replace("//", "/");
   const handlePickerChange = (event: SelectChangeEvent<SupportedLocale>) => {
     const newLocale = event.target.value as SupportedLocale;
-    const newPath = pathFromComponents(locale, currentPath, newLocale);
+    const newPath = pathFromComponents(locale, pathWithNoLocale, newLocale);
     router.push(newPath);
   };
 
