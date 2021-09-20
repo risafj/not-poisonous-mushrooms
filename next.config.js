@@ -3,7 +3,8 @@ module.exports = {
   reactStrictMode: true,
   images: {
     domains: [
-      'media.giphy.com'
+      'media.giphy.com',
+      '3.bp.blogspot.com'
     ],
   },
 }

@@ -8,6 +8,55 @@ import { Section } from '../atoms/Section';
 import { Header } from '../compounds/Header';
 import { FeatureSection } from '../molecules/FeatureSection';
 
+const FeatureSections = () => {
+return (
+  <>
+    <Section backgroundColor="primary.background">
+      <FeatureSection
+        text="Organic, locally sourced, free-range mushrooms."
+        imageElement={
+          <Image
+            src="https://3.bp.blogspot.com/-SM2FKN6pNMM/W8hDqITydSI/AAAAAAABPec/jO2ycWVDZE08IHgxpQMW4iRxdyLi_SzTQCLcBGAs/s800/character_kinoko.png"
+            alt="dancing mushroom"
+            width={ 200 }
+            height={ 200 }
+          />
+        }
+      />
+    </Section>
+    <Section>
+      <FeatureSection
+        text="Our QA teams ensure that the mushrooms are not poisonous."
+        imageElement={
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/wnn7icKnr4E"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        }
+        isImageOnLeft
+      />
+    </Section>
+    <Section backgroundColor="primary.background">
+      <FeatureSection
+        text="Loreming the ipsums. There should be 3 sections."
+        imageElement={
+          <Image
+            src="https://3.bp.blogspot.com/-SM2FKN6pNMM/W8hDqITydSI/AAAAAAABPec/jO2ycWVDZE08IHgxpQMW4iRxdyLi_SzTQCLcBGAs/s800/character_kinoko.png"
+            alt="dancing mushroom"
+            width={ 200 }
+            height={ 200 }
+            />
+          }
+        />
+    </Section>
+  </>
+);};
+
 export const HomeTemplate: TopLevelTemplate = (props) => {
   return (
     <div className="h-screen min-h-screen px-2 flex flex-col items-center">
@@ -30,26 +79,7 @@ export const HomeTemplate: TopLevelTemplate = (props) => {
             <Button variant="contained" className="flex w-40 self-center md:self-auto">Start now</Button>
           </div>
         </Section>
-
-        <Section backgroundColor="primary.background">
-          <FeatureSection
-            firstElement={
-              <Typography
-                variant="h4"
-              >
-                Organic, locally sourced, free-range mushrooms.
-              </Typography>
-            }
-            secondElement={
-              <Image
-                src="https://media.giphy.com/media/kHHG2z1NlotnXTXfDO/giphy.gif"
-                alt="dancing mushroom"
-                width={ 200 }
-                height={ 200 }
-              />
-             }
-          />
-        </Section>
+        <FeatureSections />
       </main>
 
       <Section>

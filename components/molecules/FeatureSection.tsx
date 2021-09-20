@@ -1,19 +1,46 @@
+import { Typography } from '@mui/material';
 import React from 'react';
 
 type Props = {
-  firstElement: React.ReactNode
-  secondElement: React.ReactNode
+  text: string
+  imageElement: React.ReactNode
+  isImageOnLeft?: boolean
 };
 
-export const FeatureSection = ({ firstElement, secondElement }: Props) => {
+const TextSection = ({ text, }: Pick<Props, 'text'> ) => {
   return (
-    <div className="flex flex-col md:flex-row">
-      <div className="flex flex-row items-center justify-center md:w-5/12">
-        { firstElement }
+    <div className={ "flex flex-row items-center justify-center md:w-6/12 md:px-4" }>
+      <Typography variant="h4">
+        { text }
+      </Typography>
+    </div>
+  );
+};
+
+const ImageSection = ({ imageElement }: Pick<Props, 'imageElement'>) => {
+  return (
+    <div className="flex flex-row items-center justify-center md:w-6/12 md:px-4">
+      { imageElement }
+    </div>
+  );
+};
+
+export const FeatureSection = ({ text, imageElement, isImageOnLeft = false }: Props) => {
+  return (
+    <div className="md:my-10">
+      <div className="flex flex-col md:hidden">
+        <TextSection text={ text }/>
+        <div className="h-4" />
+        <ImageSection imageElement={ imageElement } />
       </div>
-      <div className="h-4 md:w-2/12" />
-      <div className="flex flex-row items-center justify-center md:w-5/12">
-        { secondElement }
+
+      <div className="hidden md:flex md:flex-row">
+        { !isImageOnLeft && (
+          <TextSection text={ text } />
+
+        ) }
+        <ImageSection imageElement={ imageElement } />
+        { isImageOnLeft && <TextSection text={ text } /> }
       </div>
     </div>
   );
