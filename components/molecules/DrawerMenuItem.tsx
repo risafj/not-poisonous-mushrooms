@@ -1,7 +1,6 @@
 import { ListItemIcon, ListItemText, MenuItem } from '@mui/material';
-import React, { useContext } from 'react';
+import React from 'react';
 import { LocalizedLink } from '../atoms/LocalizedLink';
-import { LocaleContext } from './TranslationsWrapper';
 
 type Props = {
   icon: React.ReactNode
@@ -10,9 +9,8 @@ type Props = {
 };
 
 export const DrawerMenuItem = ({ icon, label, path }: Props) => {
-  const locale = useContext(LocaleContext).locale;
   return (
-    <LocalizedLink currentLocale={ locale } path={ path }>
+    <LocalizedLink path={ path }>
       <MenuItem>
         <ListItemIcon>
           { icon }

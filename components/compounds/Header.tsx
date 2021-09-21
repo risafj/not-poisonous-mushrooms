@@ -10,7 +10,7 @@ import { LocaleContext } from '../molecules/TranslationsWrapper';
 
 const Menu = React.memo(() => {
   const router = useRouter();
-  const locale = useContext(LocaleContext).locale;
+  const { locale } = useContext(LocaleContext);
   // consider extracting to generic routing function
   const handleButtonPress = (path: string) => {
     router.push(pathFromComponents(locale, path));
