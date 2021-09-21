@@ -3,11 +3,11 @@ import Head from 'next/head';
 import Image from 'next/image';
 import React from 'react';
 import 'tailwindcss/tailwind.css';
-import { TopLevelTemplate } from '../../@types';
-import { assetUrls } from '../../utils/assetUrls';
-import { Section } from '../atoms/Section';
-import { Header } from '../compounds/Header';
-import { FeatureSection } from '../molecules/FeatureSection';
+import { TopLevelTemplate } from '../../../@types';
+import { assetUrls } from '../../../utils/assetUrls';
+import { Section } from '../../atoms/Section';
+import { Header } from '../../compounds/Header';
+import { FeatureSection } from '../../molecules/FeatureSection';
 
 export const HomeTemplate: TopLevelTemplate = ({ locale }) => {
 
