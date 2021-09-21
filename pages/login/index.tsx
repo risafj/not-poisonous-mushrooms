@@ -3,7 +3,7 @@ import React from 'react';
 import 'tailwindcss/tailwind.css';
 import { SupportedLocale } from '../../@types';
 import { TranslationsWrapper } from '../../components/page_wrappers/TranslationsWrapper';
-import { LoginTemplate } from '../../components/templates/LoginTemplate';
+import { LoginTemplate } from '../../components/templates/login/LoginTemplate';
 import { staticEnglishProps } from '../../utils/supportedLocales';
 
 const LoginPage: NextPage<{ locale: SupportedLocale }> = (props) => (
