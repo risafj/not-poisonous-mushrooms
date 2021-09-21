@@ -1,10 +1,10 @@
 import React from 'react';
-import { TopLevelTemplate } from '../../@types';
+import { TopLevelTemplate } from '../../../@types';
 import Head from 'next/head';
 import 'tailwindcss/tailwind.css';
 import { Button, TextField } from '@mui/material';
-import { LocalizedLink } from '../atoms/LocalizedLink';
-import { Header } from '../compounds/Header';
+import { LocalizedLink } from '../../atoms/LocalizedLink';
+import { Header } from '../../compounds/Header';
 
 export const LoginTemplate: TopLevelTemplate = ({ locale }) => {
   return (
