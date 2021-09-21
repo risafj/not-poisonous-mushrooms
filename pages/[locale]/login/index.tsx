@@ -3,13 +3,8 @@ import React from 'react';
 import 'tailwindcss/tailwind.css';
 import { SupportedLocale } from '../../../@types/';
 import { TranslationsWrapper } from '../../../components/page_wrappers/TranslationsWrapper';
-<<<<<<< HEAD
-import { LoginTemplate } from '../../../components/templates/LoginTemplate';
-import { createNonEnglishPaths } from '../../../utils/supportedLocales';
-=======
 import { LoginTemplate } from '../../../components/templates/login/LoginTemplate';
-import { createNonEnglishPaths } from '../../../supportedLocales';
->>>>>>> f2eca06 (refactor: Move LoginTemplate into /templates/login folder)
+import { createNonEnglishPaths } from '../../../utils/supportedLocales';
 
 const LoginPage: NextPage<{ locale: SupportedLocale }> = (props) => (
   <TranslationsWrapper locale={ props.locale }>
