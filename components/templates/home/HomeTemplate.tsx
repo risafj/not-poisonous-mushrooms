@@ -7,6 +7,7 @@ import { TranslatedText } from '../../atoms/TranslatedText';
 import { TranslationContext } from '../../page_wrappers/TranslationsWrapper';
 import { FeaturesSection } from './_features_section';
 import { HeroSection } from './_hero_section';
+import { PricingSection } from './_pricing_section';
 
 export const HomeTemplate: TopLevelTemplate = () => {
   const { translation } = useContext(TranslationContext);
@@ -21,6 +22,7 @@ export const HomeTemplate: TopLevelTemplate = () => {
       <main className="flex flex-col justify-start">
         <HeroSection />
         <FeaturesSection />
+        <PricingSection />
       </main>
 
       <Section>
