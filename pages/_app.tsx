@@ -16,10 +16,10 @@ const theme = createTheme({
       light: '#9a5742',
       main: '#682c1b',
       dark: '#3b0200',
-      contrastText: '#fff',
+      contrastText: '#fff'
     },
     text: { primary: '#444444' }
-  },
+  }
 });
 
 function MyApp({ Component, pageProps }: AppProps) {
