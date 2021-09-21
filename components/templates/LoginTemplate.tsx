@@ -29,7 +29,7 @@ export const LoginTemplate: TopLevelTemplate = ({ locale }) => {
           </p>
 
           <LocalizedLink currentLocale={ locale } path='/'>
-            { "Or don't :(" }
+            { 'Or don\'t :(' }
           </LocalizedLink>
 
           <div className="flex flex-col md:flex-row">

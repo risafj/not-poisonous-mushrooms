@@ -1,11 +1,11 @@
-import { Language } from "@mui/icons-material";
-import { SelectChangeEvent, MenuItem, Typography, Select } from "@mui/material";
-import React, { useCallback, useContext } from "react";
-import { SupportedLocale } from "../../@types";
+import { Language } from '@mui/icons-material';
+import { SelectChangeEvent, MenuItem, Typography, Select } from '@mui/material';
+import React, { useCallback, useContext } from 'react';
+import { SupportedLocale } from '../../@types';
 import { useRouter } from 'next/router';
-import { languageDefinitions } from "../../utils/supportedLocales";
-import { pathFromComponents } from "../../utils/linking";
-import { LocaleContext } from "./TranslationsWrapper";
+import { languageDefinitions } from '../../utils/supportedLocales';
+import { pathFromComponents } from '../../utils/linking';
+import { LocaleContext } from './TranslationsWrapper';
 
 export const LanguagePicker = React.memo(() => {
   const router = useRouter();
@@ -14,7 +14,7 @@ export const LanguagePicker = React.memo(() => {
   // if we have /ja, we can just remove ja
   // if we have /ja/page, we should remove the redundant slash
   const locale = useContext(LocaleContext).locale;
-  const pathWithNoLocale = locale === 'en' ? router.asPath : router.asPath.replace(`${locale}`, '').replace("//", "/");
+  const pathWithNoLocale = locale === 'en' ? router.asPath : router.asPath.replace(`${locale}`, '').replace('//', '/');
   const handlePickerChange = (event: SelectChangeEvent<SupportedLocale>) => {
     const newLocale = event.target.value as SupportedLocale;
     const newPath = pathFromComponents(locale, pathWithNoLocale, newLocale);
