@@ -1,5 +1,5 @@
 import { GetStaticProps } from "next";
-import { SupportedLocale } from "./@types";
+import { SupportedLocale } from "../@types";
 
 const supportedNonEnglishLocales = ['ja'];
 

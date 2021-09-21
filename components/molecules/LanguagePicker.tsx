@@ -3,7 +3,7 @@ import { SelectChangeEvent, MenuItem, Typography, Select } from "@mui/material";
 import React, { useCallback, useContext } from "react";
 import { SupportedLocale } from "../../@types";
 import { useRouter } from 'next/router';
-import { languageDefinitions } from "../../supportedLocales";
+import { languageDefinitions } from "../../utils/supportedLocales";
 import { pathFromComponents } from "../../utils/linking";
 import { LocaleContext } from "./TranslationsWrapper";
 

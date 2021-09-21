@@ -3,7 +3,7 @@ import React from 'react';
 import 'tailwindcss/tailwind.css';
 import { SupportedLocale } from '../../@types';
 import { HomeTemplate } from '../../components/templates/HomeTemplate';
-import { createNonEnglishPaths } from '../../supportedLocales';
+import { createNonEnglishPaths } from '../../utils/supportedLocales';
 
 const HomePage: NextPage<{ locale: SupportedLocale }> = (props) => (<HomeTemplate { ...props } />);
 
