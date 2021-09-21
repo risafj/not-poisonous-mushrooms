@@ -6,11 +6,11 @@ import { DrawerMenu } from './DrawerMenu';
 import { AddBoxOutlined, ExitToAppOutlined, LocalOfferOutlined, MailOutlined } from '@mui/icons-material';
 import { LanguagePicker } from '../molecules/LanguagePicker';
 import { pathFromComponents } from '../../utils/linking';
-import { LocaleContext } from '../molecules/TranslationsWrapper';
+import { TranslationContext } from '../page_wrappers/TranslationsWrapper';
 
 const Menu = React.memo(() => {
   const router = useRouter();
-  const { locale } = useContext(LocaleContext);
+  const { locale } = useContext(TranslationContext);
   // consider extracting to generic routing function
   const handleButtonPress = (path: string) => {
     router.push(pathFromComponents(locale, path));
