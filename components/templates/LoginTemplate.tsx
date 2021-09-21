@@ -28,7 +28,7 @@ export const LoginTemplate: TopLevelTemplate = ({ locale }) => {
             Log in to buy even more mushrooms!
           </p>
 
-          <LocalizedLink currentLocale={ locale } path='/'>
+          <LocalizedLink path='/'>
             { "Or don't :(" }
           </LocalizedLink>
 
