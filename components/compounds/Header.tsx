@@ -1,19 +1,16 @@
 import { Button, Divider, Typography } from '@mui/material';
-import React from 'react';
+import React, { useContext } from 'react';
 import { useRouter } from 'next/router';
 import { DrawerMenuItem } from '../molecules/DrawerMenuItem';
 import { DrawerMenu } from './DrawerMenu';
 import { AddBoxOutlined, ExitToAppOutlined, LocalOfferOutlined, MailOutlined } from '@mui/icons-material';
 import { LanguagePicker } from '../molecules/LanguagePicker';
-import { SupportedLocale } from '../../@types';
 import { pathFromComponents } from '../../utils/linking';
+import { LocaleContext } from '../molecules/TranslationsWrapper';
 
-type MenuProps = {
-  locale: SupportedLocale
-};
-const Menu = React.memo<MenuProps>(({ locale }) => {
+const Menu = React.memo(() => {
   const router = useRouter();
-
+  const locale = useContext(LocaleContext).locale;
   // consider extracting to generic routing function
   const handleButtonPress = (path: string) => {
     router.push(pathFromComponents(locale, path));
@@ -22,7 +19,7 @@ const Menu = React.memo<MenuProps>(({ locale }) => {
   return (
     <>
       <div className="hidden md:flex flex-row justify-between w-128">
-        <LanguagePicker locale={ locale }/>
+        <LanguagePicker />
         <Button variant="text" color="secondary" onClick={ () => handleButtonPress('/login') }>
           Pricing
         </Button>
@@ -34,14 +31,14 @@ const Menu = React.memo<MenuProps>(({ locale }) => {
         </Button>
       </div>
       <div className="md:hidden flex flex-grow justify-end mr-4" >
-        <LanguagePicker locale={ locale }/>
+        <LanguagePicker/>
       </div>
       <DrawerMenu className="md:hidden">
-        <DrawerMenuItem icon={ <LocalOfferOutlined /> } label="Pricing" locale={ locale } path='/'/>
-        <DrawerMenuItem icon={ <MailOutlined /> } label="Contact us" locale={ locale } path='/'/>
+        <DrawerMenuItem icon={ <LocalOfferOutlined /> } label="Pricing" path='/'/>
+        <DrawerMenuItem icon={ <MailOutlined /> } label="Contact us" path='/'/>
         <Divider variant="middle" />
-        <DrawerMenuItem icon={ <AddBoxOutlined /> } label="Sign up" locale={ locale } path='/'/>
-        <DrawerMenuItem icon={ <ExitToAppOutlined /> } label="Log in" locale={ locale } path='/login'/>
+        <DrawerMenuItem icon={ <AddBoxOutlined /> } label="Sign up" path='/'/>
+        <DrawerMenuItem icon={ <ExitToAppOutlined /> } label="Log in" path='/login'/>
       </DrawerMenu>
     </>
   );
@@ -50,16 +47,13 @@ const Menu = React.memo<MenuProps>(({ locale }) => {
 Menu.displayName = 'Menu';
 
 // TODO: If we end up having menus with different items, we should make that a prop
-type HeaderProps = {
-  locale: SupportedLocale
-};
-export const Header = ({ locale }: HeaderProps) => {
+export const Header = () => {
   return (
     <div className="flex flex-row justify-between items-center">
       <Typography variant="h3" component="h1">
         NPM
       </Typography>
-      <Menu locale={ locale }/>
+      <Menu/>
     </div>
   );
 };
