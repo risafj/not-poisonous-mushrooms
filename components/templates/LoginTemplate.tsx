@@ -16,7 +16,7 @@ export const LoginTemplate: TopLevelTemplate = ({ locale }) => {
       </Head>
 
       <main className="flex flex-col pt-10 px-4 justify-start">
-        <Header locale={ locale } />
+        <Header/>
 
         <pre>
           { locale === 'en' ? 'English Login' : '日本語 Baybeeee' }
@@ -26,7 +26,7 @@ export const LoginTemplate: TopLevelTemplate = ({ locale }) => {
           Log in to buy even more mushrooms!
         </p>
 
-        <LocalizedLink currentLocale={ locale } path='/'>
+        <LocalizedLink path='/'>
           { "Or don't :(" }
         </LocalizedLink>
 

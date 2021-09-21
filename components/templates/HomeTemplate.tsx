@@ -10,6 +10,7 @@ import { Header } from '../compounds/Header';
 import { FeatureSection } from '../molecules/FeatureSection';
 
 export const HomeTemplate: TopLevelTemplate = ({ locale }) => {
+
   return (
     <div className="h-screen min-h-screen px-2 flex flex-col items-center">
       <Head>
@@ -20,7 +21,7 @@ export const HomeTemplate: TopLevelTemplate = ({ locale }) => {
 
       <main className="flex flex-col justify-start">
         <Section>
-          <Header locale={ locale } />
+          <Header/>
 
           <Typography variant="h4" component="h2" className="py-20">
             Premium { locale === 'en' ? 'mushrooms' : '椎茸' } at your doorstep, every month.
