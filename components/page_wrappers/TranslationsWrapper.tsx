@@ -6,11 +6,11 @@ type Props = {
   children: JSX.Element
 };
 
-export const LocaleContext = React.createContext<{ locale: SupportedLocale }>({ locale: 'en' });
+export const TranslationContext = React.createContext<{ locale: SupportedLocale }>({ locale: 'en' });
 export const TranslationsWrapper = ({ locale, children }: Props) => {  
   return (
-    <LocaleContext.Provider value={ { locale } } >
+    <TranslationContext.Provider value={ { locale } } >
       { children } 
-    </LocaleContext.Provider>
+    </TranslationContext.Provider>
   );
 };
