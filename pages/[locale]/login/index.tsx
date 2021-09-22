@@ -3,11 +3,11 @@ import React from 'react';
 import 'tailwindcss/tailwind.css';
 import { SupportedLocale } from '../../../@types/';
 import { TranslationsWrapper } from '../../../components/page_wrappers/TranslationsWrapper';
-import { LoginTemplate } from '../../../components/templates/LoginTemplate';
+import { LoginTemplate } from '../../../components/templates/login/LoginTemplate';
 import { createNonEnglishPaths } from '../../../supportedLocales';
 
 const LoginPage: NextPage<{ locale: SupportedLocale }> = (props) => (
-  <TranslationsWrapper locale={ props.locale }>  
+  <TranslationsWrapper locale={ props.locale }>
     <LoginTemplate { ...props } />
   </TranslationsWrapper>
 );

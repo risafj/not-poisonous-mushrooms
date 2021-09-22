@@ -2,7 +2,7 @@ import type { GetStaticProps, NextPage } from 'next';
 import 'tailwindcss/tailwind.css';
 import { SupportedLocale } from '../@types';
 import { TranslationsWrapper } from '../components/page_wrappers/TranslationsWrapper';
-import { HomeTemplate } from '../components/templates/HomeTemplate';
+import { HomeTemplate } from '../components/templates/home/HomeTemplate';
 
 const HomePage: NextPage<{ locale: SupportedLocale }> = (props) => (
   <TranslationsWrapper locale={ props.locale }>
