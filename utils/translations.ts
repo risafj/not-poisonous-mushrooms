@@ -7,10 +7,12 @@ export type LanguageSpecificTranslation = {
     login: string
     signUp: string
   }
-  landingPage: {
+  heroSection: {
     emailAddressPlaceholder: string
     actionButton: string
     tagline: string
+  }
+  featureSection: {
     featureOne: string
     featureTwo: string
     featureThree: string
@@ -27,10 +29,12 @@ const enTranslations: LanguageSpecificTranslation = {
     login: 'Sign In',
     signUp: 'Sign Up'
   },
-  landingPage: {
+  heroSection: {
     emailAddressPlaceholder: 'Email address',
     actionButton: 'Start now',
-    tagline: 'Premium mushrooms at your doorstep, every month',
+    tagline: 'Premium mushrooms at your doorstep, every month'
+  },
+  featureSection: {
     featureOne: 'Organic, locally sourced, free-range mushrooms',
     featureTwo: 'Our QA teams ensure that the mushrooms are not poisonous.',
     featureThree: 'The science is in: Mushrooms are a food you can eat. Eat our mushrooms.'
@@ -45,10 +49,12 @@ const jaTranslations: LanguageSpecificTranslation = {
     login: 'ログイン',
     signUp: '登録'
   },
-  landingPage: {
+  heroSection: {
     emailAddressPlaceholder: 'メールアドレス',
     actionButton: '登録',
-    tagline: '毎日の舞茸。週末の椎茸。プレミアムマッシュルームならNPM',
+    tagline: '毎日の舞茸。週末の椎茸。プレミアムマッシュルームならNPM'
+  },
+  featureSection: {
     featureOne: '毎月、国産オーガニック・フリーレーンジマッシュルームがお家に届く',
     featureTwo: '厳選されたマッシュルームの品質確認には、世界レベルのテスターを使うもの',
     featureThree: '科学で認証された：毒は一歳入っていない'
