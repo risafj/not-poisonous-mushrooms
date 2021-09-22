@@ -1,6 +1,6 @@
 import { SupportedLocale } from '../@types';
 
-type LanguageSpecificTranslation = {
+export type LanguageSpecificTranslation = {
   header: {
     pricing: string
     contactUs: string
