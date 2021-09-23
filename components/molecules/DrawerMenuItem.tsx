@@ -1,24 +1,21 @@
 import { ListItemIcon, ListItemText, MenuItem } from '@mui/material';
 import React from 'react';
-import { LocalizedLink } from '../atoms/LocalizedLink';
 
 type Props = {
   icon: React.ReactNode
   label: string
-  path: string
+  onClick: () => void
 };
 
-export const DrawerMenuItem = ({ icon, label, path }: Props) => {
+export const DrawerMenuItem = ({ icon, label, onClick }: Props) => {
   return (
-    <LocalizedLink path={ path }>
-      <MenuItem>
-        <ListItemIcon>
-          { icon }
-        </ListItemIcon>
-        <ListItemText>
-          { label }
-        </ListItemText>
-      </MenuItem>
-    </LocalizedLink>
+    <MenuItem onClick={ onClick }>
+      <ListItemIcon>
+        { icon }
+      </ListItemIcon>
+      <ListItemText>
+        { label }
+      </ListItemText>
+    </MenuItem>
   );
 };

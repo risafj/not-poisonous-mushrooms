@@ -21,7 +21,7 @@ export const DrawerMenu = ({ children, className }: Props) => {
         anchor="right"
         variant="temporary"
         open={ isOpen }
-        ModalProps={ { onBackdropClick: toggleDrawer } }
+        ModalProps={ { onBackdropClick: toggleDrawer, disableRestoreFocus: true } }
       >
         <div className="w-56 mt-6">
           { children }

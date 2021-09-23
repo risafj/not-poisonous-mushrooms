@@ -1,4 +1,4 @@
-import { SupportedLocale } from "../@types";
+import { SupportedLocale } from '../@types';
 
 export const pathFromComponents = (currentLocale: SupportedLocale, path: string, newLocale?: SupportedLocale) => {
   // if current locale is en, remove from path
