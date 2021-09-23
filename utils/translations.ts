@@ -17,6 +17,16 @@ export type LanguageSpecificTranslation = {
     featureTwo: string
     featureThree: string
   }
+  pricingSection: {
+    monthlyBilling: string
+    annualBilling: string
+    monthlyPrice: string
+    annualPrice: string
+    taglineMonthlyDelivery: string
+    taglineBirthdayPackage: string
+    taglineRecipeWebsite: string
+    taglineAnnual: string
+  }
   footer: {
     credits: string
   }
@@ -39,6 +49,16 @@ const enTranslations: LanguageSpecificTranslation = {
     featureTwo: 'Our QA teams ensure that the mushrooms are not poisonous.',
     featureThree: 'The science is in: Mushrooms are a food you can eat. Eat our mushrooms.'
   },
+  pricingSection: {
+    monthlyBilling: 'Monthly billing',
+    annualBilling: 'Yearly billing',
+    monthlyPrice: '$9.99 / month',
+    annualPrice: '$99.99 / year',
+    taglineMonthlyDelivery: 'Monthly delivery of fresh mushrooms',
+    taglineBirthdayPackage: 'Special birthday package in your birth month',
+    taglineRecipeWebsite: 'Free access to an exclusive mushroom recipe website',
+    taglineAnnual: 'Save 20% compared to monthly billing!'
+  },
   footer: { credits: 'Risa and Rob' }
 };
 
@@ -58,6 +78,16 @@ const jaTranslations: LanguageSpecificTranslation = {
     featureOne: '毎月、国産オーガニック・フリーレーンジマッシュルームがお家に届く',
     featureTwo: '厳選されたマッシュルームの品質確認には、世界レベルのテスターを使うもの',
     featureThree: '科学で実証された：毒は一切入っていない'
+  },
+  pricingSection: {
+    monthlyBilling: '毎月払い',
+    annualBilling: '毎年払い',
+    monthlyPrice: '¥990 / 月',
+    annualPrice: '¥9,990 / 年',
+    taglineMonthlyDelivery: '新鮮なキノコが毎月届く',
+    taglineBirthdayPackage: 'お誕生月には特別なプレゼント',
+    taglineRecipeWebsite: '会員限定のキノコ用レシピサイト',
+    taglineAnnual: '毎月払いに比べて約20％お得！'
   },
   footer: { credits: '里咲、そして露舞' }
 };
