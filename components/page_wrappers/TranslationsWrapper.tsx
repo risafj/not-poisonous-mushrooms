@@ -8,7 +8,8 @@ type Props = {
 };
 
 export const TranslationContext = React.createContext<{
-  locale: SupportedLocale, translation: LanguageSpecificTranslation
+  locale: SupportedLocale,
+  translation: LanguageSpecificTranslation
 }>({ locale: 'en', translation: translations.en });
 
 export const TranslationsWrapper = ({ locale, children }: Props) => {  
