@@ -26,10 +26,6 @@ export const LoginTemplate: TopLevelTemplate = ({ locale }) => {
           Log in to buy even more mushrooms!
         </p>
 
-        <LocalizedLink path='/'>
-          { 'Or don\'t :(' }
-        </LocalizedLink>
-
         <div className="flex flex-col md:flex-row">
           <TextField label="Email address" variant="outlined" className="flex-grow mb-4 md:mr-4 md:mb-0"/>
           <Button variant="contained" className="flex w-40 self-center md:self-auto">Start now</Button>
