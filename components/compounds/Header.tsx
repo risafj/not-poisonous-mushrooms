@@ -11,7 +11,7 @@ import { TranslatedText } from '../atoms/TranslatedText';
 
 const Menu = React.memo(() => {
   const router = useRouter();
-  const { locale } = useContext(TranslationContext);
+  const { locale, translation } = useContext(TranslationContext);
   // consider extracting to generic routing function
   const handleButtonPress = (path: string) => {
     router.push(pathFromComponents(locale, path));
@@ -22,24 +22,24 @@ const Menu = React.memo(() => {
       <div className="hidden md:flex flex-row justify-between w-128">
         <LanguagePicker />
         <Button variant="text" color="secondary" onClick={ () => handleButtonPress('/login') }>
-          Pricing
+          { translation.header.pricing }
         </Button>
         <Button variant="text" color="secondary" onClick={ () => handleButtonPress('/login') }>
-          Contact us
+          { translation.header.contactUs }
         </Button>
         <Button variant="contained" color="secondary" onClick={ () => handleButtonPress('/login') }>
-          Login
+          { translation.header.login }
         </Button>
       </div>
       <div className="md:hidden flex flex-grow justify-end mr-4" >
         <LanguagePicker/>
       </div>
       <DrawerMenu className="md:hidden">
-        <DrawerMenuItem icon={ <LocalOfferOutlined /> } label="Pricing" path='/'/>
-        <DrawerMenuItem icon={ <MailOutlined /> } label="Contact us" path='/'/>
+        <DrawerMenuItem icon={ <LocalOfferOutlined /> } label={ translation.header.pricing } path='/'/>
+        <DrawerMenuItem icon={ <MailOutlined /> } label={ translation.header.contactUs } path='/'/>
         <Divider variant="middle" />
-        <DrawerMenuItem icon={ <AddBoxOutlined /> } label="Sign up" path='/'/>
-        <DrawerMenuItem icon={ <ExitToAppOutlined /> } label="Log in" path='/login'/>
+        <DrawerMenuItem icon={ <AddBoxOutlined /> } label={ translation.header.signUp } path='/'/>
+        <DrawerMenuItem icon={ <ExitToAppOutlined /> } label={ translation.header.login } path='/login'/>
       </DrawerMenu>
     </>
   );
