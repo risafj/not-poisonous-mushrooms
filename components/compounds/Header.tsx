@@ -25,13 +25,13 @@ const Menu = React.memo(() => {
       <div className="hidden md:flex flex-row justify-between w-128">
         <LanguagePicker />
         <Button variant="text" color="secondary" onClick={ () => handleButtonPress('/', 'pricing') }>
-          { translation.header.pricing }
+          <TranslatedText>{ translation.header.pricing }</TranslatedText>
         </Button>
         <Button variant="text" color="secondary" onClick={ () => handleButtonPress('/login') }>
-          { translation.header.contactUs }
+          <TranslatedText>{ translation.header.contactUs }</TranslatedText>
         </Button>
         <Button variant="contained" color="secondary" onClick={ () => handleButtonPress('/login') }>
-          { translation.header.login }
+          <TranslatedText>{ translation.header.login }</TranslatedText>
         </Button>
       </div>
       <div className="md:hidden flex flex-grow justify-end mr-4" >
