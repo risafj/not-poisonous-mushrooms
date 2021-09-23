@@ -4,7 +4,7 @@ import React from 'react';
 type Props = {
   icon: React.ReactNode
   label: string
-  onClick: () => {}
+  onClick: () => void
 };
 
 export const DrawerMenuItem = ({ icon, label, onClick }: Props) => {

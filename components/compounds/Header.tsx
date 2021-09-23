@@ -38,11 +38,11 @@ const Menu = React.memo(() => {
         <LanguagePicker/>
       </div>
       <DrawerMenu className="md:hidden">
-        <DrawerMenuItem icon={ <LocalOfferOutlined /> } label={ translation.header.pricing } onClick={ async () => handleButtonPress('/', 'pricing') } />
-        <DrawerMenuItem icon={ <MailOutlined /> } label={ translation.header.contactUs } onClick={ async () => handleButtonPress('/login') } />
+        <DrawerMenuItem icon={ <LocalOfferOutlined /> } label={ translation.header.pricing } onClick={ () => handleButtonPress('/', 'pricing') } />
+        <DrawerMenuItem icon={ <MailOutlined /> } label={ translation.header.contactUs } onClick={ () => handleButtonPress('/login') } />
         <Divider variant="middle" />
-        <DrawerMenuItem icon={ <AddBoxOutlined /> } label={ translation.header.signUp } onClick={ async () => handleButtonPress('/login') } />
-        <DrawerMenuItem icon={ <ExitToAppOutlined /> } label={ translation.header.login } onClick={ async () => handleButtonPress('/login') } />
+        <DrawerMenuItem icon={ <AddBoxOutlined /> } label={ translation.header.signUp } onClick={ () => handleButtonPress('/login') } />
+        <DrawerMenuItem icon={ <ExitToAppOutlined /> } label={ translation.header.login } onClick={ () => handleButtonPress('/login') } />
       </DrawerMenu>
     </>
   );
