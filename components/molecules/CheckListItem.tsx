@@ -10,7 +10,7 @@ type Props = {
 export const CheckListItem = ({ text }: Props ) => {
   return (
     <ListItem disablePadding>
-      <ListItemIcon>
+      <ListItemIcon sx={ { minWidth: 30 } }>
         <CheckCircleOutline />
       </ListItemIcon>
       <ListItemText disableTypography>
