@@ -4,7 +4,7 @@ import 'tailwindcss/tailwind.css';
 import { SupportedLocale } from '../../@types';
 import { TranslationsWrapper } from '../../components/page_wrappers/TranslationsWrapper';
 import { LoginTemplate } from '../../components/templates/login/LoginTemplate';
-import { staticEnglishProps } from '../../supportedLocales';
+import { staticEnglishProps } from '../../utils/supportedLocales';
 
 const LoginPage: NextPage<{ locale: SupportedLocale }> = (props) => (
   <TranslationsWrapper locale={ props.locale }>

@@ -1,11 +1,12 @@
-import { Language } from "@mui/icons-material";
-import { SelectChangeEvent, MenuItem, Typography, Select } from "@mui/material";
-import React, { useCallback, useContext } from "react";
-import { SupportedLocale } from "../../@types";
+import { Language } from '@mui/icons-material';
+import { SelectChangeEvent, MenuItem, Select } from '@mui/material';
+import React, { useCallback, useContext } from 'react';
+import { SupportedLocale } from '../../@types';
 import { useRouter } from 'next/router';
-import { languageDefinitions } from "../../supportedLocales";
-import { pathFromComponents } from "../../utils/linking";
-import { TranslationContext } from "../page_wrappers/TranslationsWrapper";
+import { languageDefinitions } from '../../utils/supportedLocales';
+import { pathFromComponents } from '../../utils/linking';
+import { TranslationContext } from '../page_wrappers/TranslationsWrapper';
+import { TranslatedText } from '../atoms/TranslatedText';
 
 export const LanguagePicker = React.memo(() => {
   const router = useRouter();
@@ -14,7 +15,7 @@ export const LanguagePicker = React.memo(() => {
   // if we have /ja, we can just remove ja
   // if we have /ja/page, we should remove the redundant slash
   const { locale } = useContext(TranslationContext);
-  const pathWithNoLocale = locale === 'en' ? router.asPath : router.asPath.replace(`${locale}`, '').replace("//", "/");
+  const pathWithNoLocale = locale === 'en' ? router.asPath : router.asPath.replace(`${locale}`, '').replace('//', '/');
   const handlePickerChange = (event: SelectChangeEvent<SupportedLocale>) => {
     const newLocale = event.target.value as SupportedLocale;
     const newPath = pathFromComponents(locale, pathWithNoLocale, newLocale);
@@ -25,9 +26,9 @@ export const LanguagePicker = React.memo(() => {
     return (
       languageDefinitions.map((definition) => (
         <MenuItem key={ definition.code } value={ definition.code } >
-          <Typography className='flex flex-grow justify-center'>
+          <TranslatedText className='flex flex-grow justify-center'>
             { definition.displayName }
-          </Typography>
+          </TranslatedText>
         </MenuItem>
       ))
     );

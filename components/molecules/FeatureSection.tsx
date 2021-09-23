@@ -1,5 +1,5 @@
-import { Typography } from '@mui/material';
 import React from 'react';
+import { TranslatedText } from '../atoms/TranslatedText';
 
 type Props = {
   text: string
@@ -7,14 +7,14 @@ type Props = {
   isImageOnLeft?: boolean
 };
 
-const containerClassNames = "flex flex-row items-center justify-center md:w-6/12 md:px-4";
+const containerClassNames = 'flex flex-row items-center justify-center md:w-6/12 md:px-4';
 
 const TextSection = ({ text }: Pick<Props, 'text'> ) => {
   return (
     <div className={ containerClassNames }>
-      <Typography variant="h4">
+      <TranslatedText variant="h4">
         { text }
-      </Typography>
+      </TranslatedText>
     </div>
   );
 };

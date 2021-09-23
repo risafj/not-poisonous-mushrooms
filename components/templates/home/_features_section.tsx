@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Image from 'next/image';
 import { assetUrls } from '../../../utils/assetUrls';
 import { Section } from '../../atoms/Section';
 import { FeatureSection } from '../../molecules/FeatureSection';
+import { TranslationContext } from '../../page_wrappers/TranslationsWrapper';
 
 export const FeaturesSection = () => {
+  const { translation } = useContext(TranslationContext);
+
   return (
     <>
       <Section backgroundColor="primary.background">
         <FeatureSection
-          text="Organic, locally sourced, free-range mushrooms."
+          text={ translation.featureSection.featureOne }
           imageElement={
             <Image
               src={ assetUrls.happyMushroom }
@@ -22,7 +25,7 @@ export const FeaturesSection = () => {
       </Section>
       <Section>
         <FeatureSection
-          text="Our QA teams ensure that the mushrooms are not poisonous."
+          text={ translation.featureSection.featureTwo }
           imageElement={
             <iframe
               width="560"
@@ -38,7 +41,7 @@ export const FeaturesSection = () => {
       </Section>
       <Section backgroundColor="primary.background">
         <FeatureSection
-          text="Loreming the ipsums. There should be 3 sections."
+          text={ translation.featureSection.featureThree }
           imageElement={
             <Image
               src={ assetUrls.happyMushroom }
