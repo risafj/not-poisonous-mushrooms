@@ -13,15 +13,18 @@ const Menu = React.memo(() => {
   const router = useRouter();
   const { locale, translation } = useContext(TranslationContext);
   // consider extracting to generic routing function
-  const handleButtonPress = (path: string) => {
-    router.push(pathFromComponents(locale, path));
+  const handleButtonPress = (path: string, hash?: string) => {
+    router.push({
+      pathname: pathFromComponents(locale, path),
+      hash: hash
+    });
   };
 
   return (
     <>
       <div className="hidden md:flex flex-row justify-between w-128">
         <LanguagePicker />
-        <Button variant="text" color="secondary" onClick={ () => handleButtonPress('/login') }>
+        <Button variant="text" color="secondary" onClick={ () => handleButtonPress('/', 'pricing') }>
           { translation.header.pricing }
         </Button>
         <Button variant="text" color="secondary" onClick={ () => handleButtonPress('/login') }>
@@ -35,11 +38,11 @@ const Menu = React.memo(() => {
         <LanguagePicker/>
       </div>
       <DrawerMenu className="md:hidden">
-        <DrawerMenuItem icon={ <LocalOfferOutlined /> } label={ translation.header.pricing } path='/'/>
-        <DrawerMenuItem icon={ <MailOutlined /> } label={ translation.header.contactUs } path='/'/>
+        <DrawerMenuItem icon={ <LocalOfferOutlined /> } label={ translation.header.pricing } onClick={ async () => handleButtonPress('/', 'pricing') } />
+        <DrawerMenuItem icon={ <MailOutlined /> } label={ translation.header.contactUs } onClick={ async () => handleButtonPress('/login') } />
         <Divider variant="middle" />
-        <DrawerMenuItem icon={ <AddBoxOutlined /> } label={ translation.header.signUp } path='/'/>
-        <DrawerMenuItem icon={ <ExitToAppOutlined /> } label={ translation.header.login } path='/login'/>
+        <DrawerMenuItem icon={ <AddBoxOutlined /> } label={ translation.header.signUp } onClick={ async () => handleButtonPress('/login') } />
+        <DrawerMenuItem icon={ <ExitToAppOutlined /> } label={ translation.header.login } onClick={ async () => handleButtonPress('/login') } />
       </DrawerMenu>
     </>
   );

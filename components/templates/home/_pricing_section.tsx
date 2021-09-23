@@ -12,7 +12,7 @@ export const PricingSection = () => {
 
   return (
     <Section>
-      <div className="flex flex-col justify-center items-center">
+      <div className="flex flex-col justify-center items-center" id="pricing">
         <TranslatedText variant="h4" className="pb-8">
           { translation.header.pricing }
         </TranslatedText>
