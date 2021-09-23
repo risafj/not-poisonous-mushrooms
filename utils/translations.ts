@@ -62,9 +62,9 @@ const jaTranslations: LanguageSpecificTranslation = {
   footer: { credits: '里咲、そして露舞' }
 };
 
-type MasterTranslationBlock = Record<SupportedLocale, LanguageSpecificTranslation>;
+type MasterTranslations = Record<SupportedLocale, LanguageSpecificTranslation>;
 
-export const translations: MasterTranslationBlock = {
+export const translations: MasterTranslations = {
   en: enTranslations,
   ja: jaTranslations
 };
