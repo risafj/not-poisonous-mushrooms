@@ -1,4 +1,4 @@
-import { Button, Divider, Typography } from '@mui/material';
+import { Button, Divider } from '@mui/material';
 import React, { useContext } from 'react';
 import { useRouter } from 'next/router';
 import { DrawerMenuItem } from '../molecules/DrawerMenuItem';
@@ -7,6 +7,7 @@ import { AddBoxOutlined, ExitToAppOutlined, LocalOfferOutlined, MailOutlined } f
 import { LanguagePicker } from '../molecules/LanguagePicker';
 import { pathFromComponents } from '../../utils/linking';
 import { TranslationContext } from '../page_wrappers/TranslationsWrapper';
+import { TranslatedText } from '../atoms/TranslatedText';
 
 const Menu = React.memo(() => {
   const router = useRouter();
@@ -50,9 +51,9 @@ Menu.displayName = 'Menu';
 export const Header = () => {
   return (
     <div className="flex flex-row justify-between items-center">
-      <Typography variant="h3" component="h1">
+      <TranslatedText variant="h3" component="h1">
         NPM
-      </Typography>
+      </TranslatedText>
       <Menu/>
     </div>
   );

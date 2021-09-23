@@ -52,12 +52,12 @@ const jaTranslations: LanguageSpecificTranslation = {
   heroSection: {
     emailAddressPlaceholder: 'メールアドレス',
     actionButton: '登録',
-    tagline: '毎日の舞茸。週末の椎茸。プレミアムマッシュルームならNPM'
+    tagline: '毎日の舞茸。週末の椎茸。<br/>プレミアムマッシュルームならNPM'
   },
   featureSection: {
     featureOne: '毎月、国産オーガニック・フリーレーンジマッシュルームがお家に届く',
     featureTwo: '厳選されたマッシュルームの品質確認には、世界レベルのテスターを使うもの',
-    featureThree: '科学で認証された：毒は一歳入っていない'
+    featureThree: '科学で実証された：毒は一切入っていない'
   },
   footer: { credits: '里咲、そして露舞' }
 };
