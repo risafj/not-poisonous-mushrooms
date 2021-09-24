@@ -47,6 +47,10 @@ https://search.google.com/test/mobile-friendly
 
 https://search.google.com/search-console/welcome?utm_source=wmx&utm_medium=deprecation-pane&utm_content=home
 
+Verify site ownership to get detailed SEO breakdown:
+
+https://support.google.com/webmasters/answer/9008080?hl=en
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
