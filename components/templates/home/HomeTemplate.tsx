@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import 'tailwindcss/tailwind.css';
 import { TopLevelTemplate } from '../../../@types';
 import { Section } from '../../atoms/Section';
@@ -10,7 +10,10 @@ import { HeroSection } from './_hero_section';
 import { PricingSection } from './_pricing_section';
 
 export const HomeTemplate: TopLevelTemplate = () => {
-  const { translation } = useContext(TranslationContext);
+  const { locale, translation } = useContext(TranslationContext);
+  useEffect(() => {
+    document.documentElement.lang = locale;
+  });
   return (
     <div className="h-screen min-h-screen px-2 flex flex-col items-center">
       <Head>
