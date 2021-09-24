@@ -1,15 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { TopLevelTemplate } from '../../../@types';
 import Head from 'next/head';
 import 'tailwindcss/tailwind.css';
 import { Button, TextField } from '@mui/material';
 import { Header } from '../../compounds/Header';
+import { TranslationContext } from '../../page_wrappers/TranslationsWrapper';
 
 export const LoginTemplate: TopLevelTemplate = ({ locale }) => {
+  const { translation } = useContext(TranslationContext);
   return (
     <div className="h-screen min-h-screen px-2 flex flex-col items-center">
       <Head>
-        <title>Login</title>
+        <title>{ translation.loginSEO.title }</title>
         <meta name="description" content="Mushroom subscription service" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

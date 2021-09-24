@@ -29,6 +29,12 @@ export type LanguageSpecificTranslation = {
   }
   footer: {
     credits: string
+  },
+  homepageSEO: {
+    title: string
+  },
+  loginSEO: {
+    title: string
   }
 };
 
@@ -59,7 +65,9 @@ const enTranslations: LanguageSpecificTranslation = {
     taglineRecipeWebsite: 'Free access to an exclusive mushroom recipe website',
     taglineAnnual: 'Save 20% compared to monthly billing!'
   },
-  footer: { credits: 'Risa and Rob' }
+  footer: { credits: 'Risa and Rob' },
+  homepageSEO: { title: 'Not Poisonous Mushrooms - a mushroom subscription service' },
+  loginSEO: { title: 'Login' }
 };
 
 const jaTranslations: LanguageSpecificTranslation = {
@@ -89,7 +97,9 @@ const jaTranslations: LanguageSpecificTranslation = {
     taglineRecipeWebsite: '会員限定のキノコ用レシピサイト',
     taglineAnnual: '毎月払いに比べて約20％お得！'
   },
-  footer: { credits: '里咲、そして露舞' }
+  footer: { credits: '里咲、そして露舞' },
+  homepageSEO: { title: 'Not poisonous mushrooms - きのこが毎月届くサービス' },
+  loginSEO: { title: 'ログイン' }
 };
 
 type MasterTranslations = Record<SupportedLocale, LanguageSpecificTranslation>;

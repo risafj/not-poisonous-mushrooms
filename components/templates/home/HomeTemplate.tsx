@@ -14,7 +14,7 @@ export const HomeTemplate: TopLevelTemplate = () => {
   return (
     <div className="h-screen min-h-screen px-2 flex flex-col items-center">
       <Head>
-        <title>NPM</title>
+        <title>{ translation.homepageSEO.title }</title>
         <meta name="description" content="Mushroom subscription service" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
