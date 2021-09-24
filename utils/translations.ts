@@ -108,7 +108,7 @@ const jaTranslations: LanguageSpecificTranslation = {
   footer: { credits: '里咲、そして露舞' },
   homepageSEO: {
     title: 'Not poisonous mushrooms - きのこが毎月届くサービス',
-    description: '毒が入ってない厳選されたきのこが毎月お家にお届けします！'  
+    description: '毒が入ってない厳選されたきのこを毎月お家にお届けします！'  
   },
   loginSEO: {
     title: 'ログイン',
