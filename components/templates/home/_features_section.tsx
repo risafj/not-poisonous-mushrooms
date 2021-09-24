@@ -28,6 +28,7 @@ export const FeaturesSection = () => {
           text={ translation.featureSection.featureTwo }
           imageElement={
             <iframe
+              title="QA team video"
               width="560"
               height="315"
               src={ assetUrls.qaTeam }

@@ -17,8 +17,9 @@ export const HeroSection = () => {
       </TranslatedText>
 
       <div className="flex flex-col md:flex-row md:justify-center">
-        <TextField label={ translation.heroSection.emailAddressPlaceholder } variant="outlined" className="flex-grow max-w-lg mb-4 md:mr-4 md:mb-0"/>
-        <Button variant="contained" className="flex w-40 self-center md:self-auto">{ translation.heroSection.actionButton }</Button>
+        <label htmlFor='email-input'>Email Address Input</label>
+        <TextField id='email-input' aria-label={ translation.heroSection.emailAddressPlaceholder } label={ translation.heroSection.emailAddressPlaceholder } variant="outlined" className="flex-grow max-w-lg mb-4 md:mr-4 md:mb-0"/>
+        <Button variant='contained' className='flex w-40 self-center md:self-auto'>{ translation.heroSection.actionButton }</Button>
       </div>
     </Section>
   );

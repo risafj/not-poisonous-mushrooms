@@ -14,7 +14,7 @@ export const DrawerMenu = ({ children, className }: Props) => {
 
   return (
     <div className={ className }>
-      <IconButton onClick={ toggleDrawer }>
+      <IconButton onClick={ toggleDrawer } aria-label='Toggle Menu'>
         <Menu fontSize="large" />
       </IconButton>
       <Drawer

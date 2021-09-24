@@ -24,13 +24,13 @@ const Menu = React.memo(() => {
     <>
       <div className="hidden md:flex flex-row justify-between w-128">
         <LanguagePicker />
-        <Button variant="text" color="secondary" onClick={ () => handleButtonPress('/', 'pricing') }>
+        <Button variant="text" color="secondary" onClick={ () => handleButtonPress('/', 'pricing') } aria-label={ translation.header.pricing }>
           <TranslatedText>{ translation.header.pricing }</TranslatedText>
         </Button>
-        <Button variant="text" color="secondary" onClick={ () => handleButtonPress('/login') }>
+        <Button variant="text" color="secondary" onClick={ () => handleButtonPress('/login') } aria-label={ translation.header.contactUs }>
           <TranslatedText>{ translation.header.contactUs }</TranslatedText>
         </Button>
-        <Button variant="contained" color="secondary" onClick={ () => handleButtonPress('/login') }>
+        <Button variant="contained" color="secondary" onClick={ () => handleButtonPress('/login') } aria-label={ translation.header.login }>
           <TranslatedText>{ translation.header.login }</TranslatedText>
         </Button>
       </div>
@@ -38,11 +38,11 @@ const Menu = React.memo(() => {
         <LanguagePicker/>
       </div>
       <DrawerMenu className="md:hidden">
-        <DrawerMenuItem icon={ <LocalOfferOutlined /> } label={ translation.header.pricing } onClick={ () => handleButtonPress('/', 'pricing') } />
-        <DrawerMenuItem icon={ <MailOutlined /> } label={ translation.header.contactUs } onClick={ () => handleButtonPress('/login') } />
+        <DrawerMenuItem icon={ <LocalOfferOutlined /> } label={ translation.header.pricing } onClick={ () => handleButtonPress('/', 'pricing') } aria-label={ translation.header.pricing } />
+        <DrawerMenuItem icon={ <MailOutlined /> } label={ translation.header.contactUs } onClick={ () => handleButtonPress('/login') } aria-label={ translation.header.contactUs } />
         <Divider variant="middle" />
-        <DrawerMenuItem icon={ <AddBoxOutlined /> } label={ translation.header.signUp } onClick={ () => handleButtonPress('/login') } />
-        <DrawerMenuItem icon={ <ExitToAppOutlined /> } label={ translation.header.login } onClick={ () => handleButtonPress('/login') } />
+        <DrawerMenuItem icon={ <AddBoxOutlined /> } label={ translation.header.signUp } onClick={ () => handleButtonPress('/login') } aria-label={ translation.header.signUp } />
+        <DrawerMenuItem icon={ <ExitToAppOutlined /> } label={ translation.header.login } onClick={ () => handleButtonPress('/login') } aria-label={ translation.header.login } />
       </DrawerMenu>
     </>
   );
