@@ -32,9 +32,11 @@ export type LanguageSpecificTranslation = {
   },
   homepageSEO: {
     title: string
+    description: string
   },
   loginSEO: {
     title: string
+    description: string
   }
 };
 
@@ -66,8 +68,14 @@ const enTranslations: LanguageSpecificTranslation = {
     taglineAnnual: 'Save 20% compared to monthly billing!'
   },
   footer: { credits: 'Risa and Rob' },
-  homepageSEO: { title: 'Not Poisonous Mushrooms - a mushroom subscription service' },
-  loginSEO: { title: 'Login' }
+  homepageSEO: {
+    title: 'Not Poisonous Mushrooms - a mushroom subscription service',
+    description: 'NPM provides fresh mushrooms that are certified to not be poisonous every month to your doorstep!' 
+  },
+  loginSEO: {
+    title: 'Login',
+    description: 'Login to your NPM account'  
+  }
 };
 
 const jaTranslations: LanguageSpecificTranslation = {
@@ -98,8 +106,14 @@ const jaTranslations: LanguageSpecificTranslation = {
     taglineAnnual: '毎月払いに比べて約20％お得！'
   },
   footer: { credits: '里咲、そして露舞' },
-  homepageSEO: { title: 'Not poisonous mushrooms - きのこが毎月届くサービス' },
-  loginSEO: { title: 'ログイン' }
+  homepageSEO: {
+    title: 'Not poisonous mushrooms - きのこが毎月届くサービス',
+    description: '毒が入ってない厳選されたきのこが毎月お家にお届けします！'  
+  },
+  loginSEO: {
+    title: 'ログイン',
+    description: 'NPMアカウントにログインする'   
+  }
 };
 
 type MasterTranslations = Record<SupportedLocale, LanguageSpecificTranslation>;

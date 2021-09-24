@@ -12,7 +12,7 @@ export const LoginTemplate: TopLevelTemplate = ({ locale }) => {
     <div className="h-screen min-h-screen px-2 flex flex-col items-center">
       <Head>
         <title>{ translation.loginSEO.title }</title>
-        <meta name="description" content="Mushroom subscription service" />
+        <meta name="description" content={ translation.loginSEO.description } />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
