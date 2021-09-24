@@ -41,6 +41,10 @@ go to out/public/sitemap.xml
 
 remove invalid paths
 
+### Check SEO viability
+
+https://search.google.com/test/mobile-friendly
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
