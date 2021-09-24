@@ -19,6 +19,7 @@ export const FeaturesSection = () => {
               alt="happy mushroom"
               width={ 200 }
               height={ 200 }
+              loading='lazy'
             />
           }
         />
@@ -48,6 +49,7 @@ export const FeaturesSection = () => {
               alt="dancing mushroom"
               width={ 200 }
               height={ 200 }
+              loading='lazy'
             />
           }
         />
