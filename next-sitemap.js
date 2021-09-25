@@ -1,6 +1,6 @@
-const SITE_NAME = 'https://notpoisonousmushrooms.com'
+const SITE_NAME = process.env.SITE_URL || 'https://notpoisonousmushrooms.com'
 module.exports = {
-  siteUrl: process.env.SITE_URL || SITE_NAME,
+  siteUrl: SITE_NAME,
   alternateRefs: [
     {
       href: `${SITE_NAME}/ja`,
