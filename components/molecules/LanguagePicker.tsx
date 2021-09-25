@@ -25,7 +25,7 @@ export const LanguagePicker = React.memo(() => {
   const languageOptions = useCallback(() => {
     return (
       languageDefinitions.map((definition) => (
-        <MenuItem key={ definition.code } value={ definition.code } >
+        <MenuItem key={ definition.code } value={ definition.code } aria-label='Language Select'>
           <TranslatedText className='flex flex-grow justify-center'>
             { definition.displayName }
           </TranslatedText>

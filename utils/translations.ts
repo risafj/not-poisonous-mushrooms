@@ -12,6 +12,9 @@ export type LanguageSpecificTranslation = {
     actionButton: string
     tagline: string
   }
+  loginPage: {
+    loginTagline: string
+  },
   featureSection: {
     featureOne: string
     featureTwo: string
@@ -29,6 +32,14 @@ export type LanguageSpecificTranslation = {
   }
   footer: {
     credits: string
+  },
+  homepageSEO: {
+    title: string
+    description: string
+  },
+  loginSEO: {
+    title: string
+    description: string
   }
 };
 
@@ -44,6 +55,7 @@ const enTranslations: LanguageSpecificTranslation = {
     actionButton: 'Start now',
     tagline: 'Premium mushrooms at your doorstep, every month'
   },
+  loginPage: { loginTagline: 'Log in to buy even more mushrooms!' },
   featureSection: {
     featureOne: 'Organic, locally sourced, free-range mushrooms',
     featureTwo: 'Our QA teams ensure that the mushrooms are not poisonous.',
@@ -59,7 +71,15 @@ const enTranslations: LanguageSpecificTranslation = {
     taglineRecipeWebsite: 'Free access to an exclusive mushroom recipe website',
     taglineAnnual: 'Save 20% compared to monthly billing!'
   },
-  footer: { credits: 'Risa and Rob' }
+  footer: { credits: 'Risa and Rob' },
+  homepageSEO: {
+    title: 'Not Poisonous Mushrooms - a mushroom subscription service',
+    description: 'NPM provides fresh mushrooms that are certified to not be poisonous every month to your doorstep!'
+  },
+  loginSEO: {
+    title: 'Login',
+    description: 'Login to your NPM account'
+  }
 };
 
 const jaTranslations: LanguageSpecificTranslation = {
@@ -74,6 +94,7 @@ const jaTranslations: LanguageSpecificTranslation = {
     actionButton: '登録',
     tagline: '毎日の舞茸。週末の椎茸。<br/>プレミアムマッシュルームならNPM'
   },
+  loginPage: { loginTagline: 'キノコが足りない方はこちらへ！' },
   featureSection: {
     featureOne: '毎月、国産オーガニック・フリーレーンジマッシュルームがお家に届く',
     featureTwo: '厳選されたマッシュルームの品質確認には、世界レベルのテスターを使うもの',
@@ -89,7 +110,15 @@ const jaTranslations: LanguageSpecificTranslation = {
     taglineRecipeWebsite: '会員限定のキノコ用レシピサイト',
     taglineAnnual: '毎月払いに比べて約20％お得！'
   },
-  footer: { credits: '里咲、そして露舞' }
+  footer: { credits: '里咲、そして露舞' },
+  homepageSEO: {
+    title: 'Not poisonous mushrooms - きのこが毎月届くサービス',
+    description: '毒が入ってない厳選されたきのこを毎月お家にお届けします！'  
+  },
+  loginSEO: {
+    title: 'ログイン',
+    description: 'NPMアカウントにログインする'   
+  }
 };
 
 type MasterTranslations = Record<SupportedLocale, LanguageSpecificTranslation>;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { SupportedLocale } from '../../@types';
 import { LanguageSpecificTranslation, translations } from '../../utils/translations';
 
@@ -12,6 +12,9 @@ export const TranslationContext = React.createContext<{
 }>({ locale: 'en', translation: translations.en });
 
 export const TranslationsWrapper = ({ locale, children }: Props) => {  
+  useEffect(() => {
+    document.documentElement.lang = locale;
+  });
   return (
     <TranslationContext.Provider value={ { locale, translation: translations[locale] } } >
       { children } 

@@ -28,6 +28,7 @@ export const FeaturesSection = () => {
           text={ translation.featureSection.featureTwo }
           imageElement={
             <iframe
+              title="QA team video"
               width="560"
               height="315"
               src={ assetUrls.qaTeam }
@@ -45,9 +46,10 @@ export const FeaturesSection = () => {
           imageElement={
             <Image
               src={ assetUrls.happyMushroom }
-              alt="dancing mushroom"
+              alt="happy mushroom"
               width={ 200 }
               height={ 200 }
+              loading='lazy'
             />
           }
         />

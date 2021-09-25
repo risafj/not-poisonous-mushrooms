@@ -10,7 +10,7 @@ Change your node version to `14.15.0`.
 Run `yarn`.
 
 
-### Dev and Deploy
+### Dev
 
 Run the site locally:
 
@@ -25,6 +25,31 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 [API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+
+
+### Deploy
+
+#### Warning about sitemaps
+
+There is currently a bug related to locales [and the error paths must be deleted](https://github.com/iamvishnusankar/next-sitemap/issues/212).
+
+#### Build and deploy scripts
+
+`yarn build`
+
+go to out/public/sitemap.xml
+
+remove invalid paths
+
+### Check SEO viability
+
+https://search.google.com/test/mobile-friendly
+
+https://search.google.com/search-console/welcome?utm_source=wmx&utm_medium=deprecation-pane&utm_content=home
+
+Verify site ownership to get detailed SEO breakdown:
+
+https://support.google.com/webmasters/answer/9008080?hl=en
 
 ## Learn More
 
