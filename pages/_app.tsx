@@ -2,6 +2,7 @@ import type { AppProps } from 'next/app';
 
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { CssBaseline } from '@mui/material';
+import { useScrollAnimations } from '../components/hooks/useScrollAnimations';
 
 const theme = createTheme({
   palette: {
@@ -23,6 +24,7 @@ const theme = createTheme({
 });
 
 function MyApp({ Component, pageProps }: AppProps) {
+  useScrollAnimations();
   return (
     <ThemeProvider theme={ theme }>
       <CssBaseline />
