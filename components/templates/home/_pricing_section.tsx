@@ -11,7 +11,7 @@ export const PricingSection = () => {
   const { translation } = useContext(TranslationContext);
 
   return (
-    <Section>
+    <Section className='js-show-on-scroll'>
       <div className="flex flex-col justify-center items-center" id="pricing">
         <TranslatedText variant="h4" className="pb-8" component='h2'>
           { translation.header.pricing }
