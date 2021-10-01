@@ -4,7 +4,6 @@ import { Section } from '../../atoms/Section';
 import { TranslatedText } from '../../atoms/TranslatedText';
 import { Header } from '../../compounds/Header';
 import { TranslationContext } from '../../page_wrappers/TranslationsWrapper';
-import Typewriter from 'typewriter-effect';
 import { TextWithTypeEffect } from '../../atoms/TextWithTypeEffect';
 
 export const HeroSection = () => {

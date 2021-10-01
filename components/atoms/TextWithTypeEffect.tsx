@@ -22,6 +22,7 @@ export const TextWithTypeEffect = ({ fixedText, fixedTextClass, text, textClass,
         { fixedText }
       </TranslatedText> }
       <Typewriter
+        // @ts-ignore
         component='span'
         options={ {
           autoStart: true,
