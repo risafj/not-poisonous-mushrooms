@@ -1,21 +1,20 @@
 import React, { useContext } from 'react';
 import { TopLevelTemplate } from '../../../@types';
-import Head from 'next/head';
 import 'tailwindcss/tailwind.css';
 import { Button, TextField } from '@mui/material';
 import { Header } from '../../compounds/Header';
 import { TranslationContext } from '../../page_wrappers/TranslationsWrapper';
 import { TranslatedText } from '../../atoms/TranslatedText';
+import { Seo } from '../../Seo';
 
 export const LoginTemplate: TopLevelTemplate = () => {
   const { translation } = useContext(TranslationContext);
   return (
     <div className="h-screen min-h-screen px-2 flex flex-col items-center">
-      <Head>
-        <title>{ translation.loginSEO.title }</title>
-        <meta name="description" content={ translation.loginSEO.description } />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <Seo
+        title={ translation.loginSEO.title }
+        description={ translation.loginSEO.description }
+      />
 
       <main className="flex flex-col pt-10 px-4 justify-start">
         <Header/>
