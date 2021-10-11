@@ -4,10 +4,10 @@ import { Section } from '../../atoms/Section';
 import { TranslatedText } from '../../atoms/TranslatedText';
 import { Header } from '../../compounds/Header';
 import { TranslationContext } from '../../page_wrappers/TranslationsWrapper';
+import { TextWithTypeEffect } from '../../atoms/TextWithTypeEffect';
 
 export const HeroSection = () => {
   const { translation } = useContext(TranslationContext);
-
   return (
     <Section>
       <Header/>
@@ -15,6 +15,15 @@ export const HeroSection = () => {
       <TranslatedText variant="h4" component="h2" className="py-20" >
         { translation.heroSection.tagline }
       </TranslatedText>
+
+      <div className='my-8'>
+        <TextWithTypeEffect 
+          fixedText='For when you need '
+          fixedTextClass='font-thin'
+          text={ ['Maitake', 'Shiitake', 'Toadstools'] }
+          textClass={ 'font-bold' }
+        /> 
+      </div>
 
       <div className="flex flex-col md:flex-row md:justify-center">
         <label htmlFor='email-input' className='hidden'>Email Address Input</label>
