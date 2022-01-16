@@ -1,6 +1,5 @@
 import { Card, CardContent, List, ToggleButton, ToggleButtonGroup } from '@mui/material';
 import React, { useContext, useState } from 'react';
-import 'tailwindcss/tailwind.css';
 import { Section } from '../../atoms/Section';
 import { TranslatedText } from '../../atoms/TranslatedText';
 import { CheckListItem } from '../../molecules/CheckListItem';

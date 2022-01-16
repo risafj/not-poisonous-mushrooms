@@ -6,8 +6,10 @@ const fadeInAnimationKeyframes = {
 const fadeInAnimationRules = 'fadeIn 1s ease-in forwards';
 
 module.exports = {
-  purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
-  darkMode: false, // or 'media' or 'class'
+  content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
+  corePlugins: {
+    preflight: false,
+  },
   theme: {
     extend: {
       keyframes: {
@@ -17,10 +19,6 @@ module.exports = {
         fadeIn: fadeInAnimationRules
       }
     },
-  },
-  variants: {
-    extend: {},
-    animation: ['motion-safe']
   },
   plugins: [],
 }
