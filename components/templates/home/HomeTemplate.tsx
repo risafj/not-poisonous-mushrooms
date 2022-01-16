@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import 'tailwindcss/tailwind.css';
 import { TopLevelTemplate } from '../../../@types';
 import { Section } from '../../atoms/Section';
 import { TranslatedText } from '../../atoms/TranslatedText';

@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import { TopLevelTemplate } from '../../../@types';
-import 'tailwindcss/tailwind.css';
 import { Button, TextField } from '@mui/material';
 import { Header } from '../../compounds/Header';
 import { TranslationContext } from '../../page_wrappers/TranslationsWrapper';
