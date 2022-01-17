@@ -1,4 +1,4 @@
-import { SupportedLocale } from '../@types';
+import { ListOfAppPages, SupportedLocale } from '../@types';
 
 export type LanguageSpecificTranslation = {
   header: {
@@ -126,4 +126,41 @@ type MasterTranslations = Record<SupportedLocale, LanguageSpecificTranslation>;
 export const translations: MasterTranslations = {
   en: enTranslations,
   ja: jaTranslations
+};
+
+// SEO DATA ---
+
+type SEOData = {
+  title: string,
+  description: string
+};
+
+export type LanguageSpecificSEO = Record<ListOfAppPages, SEOData>;
+type MasterSEOTranslations = Record<SupportedLocale, LanguageSpecificSEO>;
+
+const enSEO: LanguageSpecificSEO = {
+  homepage: {
+    title: 'Not Poisonous Mushrooms - a mushroom subscription service',
+    description: 'NPM provides fresh mushrooms that are certified to not be poisonous every month to your doorstep!'
+  },
+  login: {
+    title: 'Login',
+    description: 'Login to your NPM account'
+  }
+};
+
+const jaSEO: LanguageSpecificSEO = {
+  homepage: {
+    title: 'Not poisonous mushrooms - きのこが毎月届くサービス',
+    description: '毒が入ってない厳選されたきのこを毎月お家にお届けします！'  
+  },
+  login: {
+    title: 'ログイン',
+    description: 'NPMアカウントにログインする'   
+  }
+};
+
+export const seoTranslations: MasterSEOTranslations = {
+  en: enSEO,
+  ja: jaSEO
 };

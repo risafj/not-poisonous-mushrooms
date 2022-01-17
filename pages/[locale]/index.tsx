@@ -1,14 +1,14 @@
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import React from 'react';
 import { SupportedLocale } from '../../@types';
-import { TranslationsWrapper } from '../../components/page_wrappers/TranslationsWrapper';
+import { Page } from '../../components/atoms/Page';
 import { HomeTemplate } from '../../components/templates/home/HomeTemplate';
 import { createNonEnglishPaths } from '../../utils/supportedLocales';
 
-const HomePage: NextPage<{ locale: SupportedLocale }> = (props) => (
-  <TranslationsWrapper locale={ props.locale }>
-    <HomeTemplate { ...props } />
-  </TranslationsWrapper>
+const HomePage: NextPage<{ locale: SupportedLocale }> = ({ locale }) => (
+  <Page locale={ locale } seoTranslationKey='homepage'>
+    <HomeTemplate />
+  </Page>
 );
 
 export const getStaticPaths: GetStaticPaths = createNonEnglishPaths;

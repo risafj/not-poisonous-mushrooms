@@ -1,22 +1,24 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Head from 'next/head';
 import { assetUrls } from '../utils/assetUrls';
+import { LanguageSpecificSEO } from '../utils/translations';
+import { TranslationContext } from './page_wrappers/TranslationsWrapper';
 
 type Props = {
-  title: string
-  description: string
+  pageTitle: keyof LanguageSpecificSEO
 };
 
-export const Seo = ({ title, description }: Props) => {
+export const Seo = ({ pageTitle }: Props) => {
+  const { seoTranslation } = useContext(TranslationContext);
   return (
     <Head>
-      <title>{ title }</title>
-      <meta name="description" content={ description }/>
+      <title>{ seoTranslation[pageTitle].title }</title>
+      <meta name="description" content={ seoTranslation[pageTitle].description }/>
       <link rel="icon" href="/favicon.ico" />
-      <meta property="og:url" content="npm.com" />
+      <meta property="og:url" content="learnkichi.com" />
       <meta property="og:type" content="website" />
-      <meta property="og:title" content={ title } />
-      <meta property="og:description" content={ description } />
+      <meta property="og:title" content={ seoTranslation[pageTitle].title } />
+      <meta property="og:description" content={ seoTranslation[pageTitle].description } />
       <meta property="og:image" content={ assetUrls.ogp } />
       <meta property="og:image:width" content="600" />
       <meta property="og:image:height" content="315" />
