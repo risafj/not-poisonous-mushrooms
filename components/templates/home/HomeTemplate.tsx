@@ -20,7 +20,7 @@ export const HomeTemplate = () => {
 
       <Section>
         <TranslatedText>
-          { translation.footer.credits='' }
+          { translation.footer.credits }
         </TranslatedText>
       </Section>
     </div>
