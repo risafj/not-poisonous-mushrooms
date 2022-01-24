@@ -8,7 +8,7 @@ import { Seo } from '../Seo';
 export const Page: NextPage<{ locale: SupportedLocale, seoTranslationKey: keyof LanguageSpecificSEO, children: JSX.Element }> = ({ locale, children, seoTranslationKey }) => {
   return (
     <TranslationsWrapper locale={ locale }>
-      <Seo pageTitle={ seoTranslationKey }/>
+      <Seo seoTranslationKey={ seoTranslationKey }/>
       { children }
     </TranslationsWrapper>
   );

@@ -5,7 +5,7 @@ import { LanguageSpecificSEO } from '../utils/translations';
 import { TranslationContext } from './page_wrappers/TranslationsWrapper';
 
 type Props = {
-  pageTitle: keyof LanguageSpecificSEO
+  seoTranslationKey: keyof LanguageSpecificSEO
 };
 
 export const Seo = ({ pageTitle }: Props) => {
