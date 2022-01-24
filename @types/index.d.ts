@@ -1,7 +1,5 @@
 export type SupportedLocale = 'en' | 'ja';
 
-export type TopLevelTemplate = (props: {locale: SupportedLocale}) => JSX.Element;
-
 declare module '@mui/material/styles' {
   interface PaletteColor {
     background?: string
@@ -10,3 +8,5 @@ declare module '@mui/material/styles' {
     background?: string
   }
 }
+
+type AppPageName = 'homepage' | 'login';
