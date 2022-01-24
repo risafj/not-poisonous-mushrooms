@@ -1,4 +1,4 @@
-import { ListOfAppPages, SupportedLocale } from '../@types';
+import { AppPageName, SupportedLocale } from '../@types';
 
 export type LanguageSpecificTranslation = {
   header: {
@@ -135,7 +135,7 @@ type SEOData = {
   description: string
 };
 
-export type LanguageSpecificSEO = Record<ListOfAppPages, SEOData>;
+export type LanguageSpecificSEO = Record<AppPageName, SEOData>;
 type MasterSEOTranslations = Record<SupportedLocale, LanguageSpecificSEO>;
 
 const enSEO: LanguageSpecificSEO = {

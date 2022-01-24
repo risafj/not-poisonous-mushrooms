@@ -9,4 +9,4 @@ declare module '@mui/material/styles' {
   }
 }
 
-type ListOfAppPages = 'homepage' | 'login';
+type AppPageName = 'homepage' | 'login';
