@@ -22,7 +22,7 @@ const Menu = React.memo(() => {
 
   return (
     <>
-      <div className="hidden md:flex flex-row justify-between w-128">
+      <div className="hidden md:flex flex-row justify-between w-1/4 max-w-sm min-w-fit">
         <LanguagePicker />
         <Button variant="text" color="secondary" onClick={ () => handleButtonPress('/', 'pricing') } aria-label={ translation.header.pricing }>
           <TranslatedText>{ translation.header.pricing }</TranslatedText>
