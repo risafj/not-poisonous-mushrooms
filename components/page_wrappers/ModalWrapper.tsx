@@ -1,27 +1,7 @@
 import React, { useContext, useState } from 'react';
-import { RequireAtLeastOne } from '../../@types';
+import { ModalContents, modalSettingDefaultObject, ModalSettings } from '../../utils/modals';
 import { Modal } from '../molecules/Modal';
 import { TranslationContext } from './TranslationsWrapper';
-
-const dummyData = {
-  title: 'UNSET',
-  showSpinner: true
-};
-
-const WAITING_FOR_MUSHROOMS = 'WAITING_FOR_MUSHROOMS';
-const NO_MUSHROOMS_AVAILABLE = 'NO_MUSHROOMS_AVAILABLE';
-
-const modalTypes = [WAITING_FOR_MUSHROOMS, NO_MUSHROOMS_AVAILABLE] as const;
-
-type ModalType = typeof modalTypes[number];
-type InitializerObject = { [key in ModalType]: typeof dummyData };
-
-const setDummyDataForInitialContextState = (state: InitializerObject, keyToSet: ModalType): InitializerObject => {
-  state[keyToSet] = dummyData;
-  return state;
-};
-
-const modalSettingDefaultObject = modalTypes.reduce(setDummyDataForInitialContextState, {} as InitializerObject);
 
 export const ModalContext = React.createContext<{
   showModal: ( modalContent: ModalContents) => void,
@@ -32,16 +12,6 @@ export const ModalContext = React.createContext<{
 type Props = {
   children: any
 };
-
-export type ModalContents = {
-  title?: string
-  body?: string
-  showSpinner?: boolean
-  showConfirmButton?: boolean
-  onConfirm?: () => void
-};
-
-export type ModalSettings = Record<ModalType, RequireAtLeastOne<ModalContents, 'showSpinner' | 'showConfirmButton'>>;
 
 export const ModalWrapper = ({ children }: Props) => {
 
