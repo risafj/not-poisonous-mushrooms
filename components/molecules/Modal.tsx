@@ -1,6 +1,6 @@
 import { Button, CircularProgress, Dialog } from '@mui/material';
 import React, { useContext } from 'react';
-import { ModalContents } from '../../utils/modalCodes';
+import { ModalContents } from '../page_wrappers/ModalWrapper';
 import { TranslationContext } from '../page_wrappers/TranslationsWrapper';
 
 type Props = {
@@ -12,7 +12,6 @@ export const Modal = ({ data }: Props) => {
     <Dialog
       id="modal"
       open
-      
     >
       <div >
         { data.title }
@@ -20,7 +19,7 @@ export const Modal = ({ data }: Props) => {
         { data.body }
         { data.showSpinner && <CircularProgress /> }
         { data.showConfirmButton && (<Button onClick={ () => data.onConfirmArg() }>
-          { translation.modalOkButton }
+          { translation.modalOKButton }
         </Button>) }
       </div>
     </Dialog>

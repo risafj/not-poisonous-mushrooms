@@ -3,6 +3,7 @@ import { Section } from '../../atoms/Section';
 import { TranslatedText } from '../../atoms/TranslatedText';
 import { Header } from '../../compounds/Header';
 import { TranslationContext } from '../../page_wrappers/TranslationsWrapper';
+import { DemoSection } from './_demo_section';
 import { FeaturesSection } from './_features_section';
 import { HeroSection } from './_hero_section';
 import { PricingSection } from './_pricing_section';
@@ -16,6 +17,7 @@ export const HomeTemplate = () => {
         <HeroSection />
         <FeaturesSection />
         <PricingSection />
+        <DemoSection />
       </main>
 
       <Section>
