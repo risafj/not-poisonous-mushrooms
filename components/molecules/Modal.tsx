@@ -18,7 +18,7 @@ export const Modal = ({ data }: Props) => {
         <br/>
         { data.body }
         { data.showSpinner && <CircularProgress /> }
-        { data.showConfirmButton && (<Button onClick={ () => data.onConfirmArg && data.onConfirmArg() }>
+        { data.showConfirmButton && (<Button onClick={ () => data.onConfirm && data.onConfirm() }>
           { translation.modalOKButton }
         </Button>) }
       </div>

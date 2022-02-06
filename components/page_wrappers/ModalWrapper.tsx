@@ -3,8 +3,6 @@ import { RequireAtLeastOne } from '../../@types';
 import { Modal } from '../molecules/Modal';
 import { TranslationContext } from './TranslationsWrapper';
 
-// all context must be type-safe initialized
-// this could be put elsewhere if it were large
 const dummyData = {
   title: 'UNSET',
   showSpinner: true
@@ -15,12 +13,15 @@ const NO_MUSHROOMS_AVAILABLE = 'NO_MUSHROOMS_AVAILABLE';
 
 const modalTypes = [WAITING_FOR_MUSHROOMS, NO_MUSHROOMS_AVAILABLE] as const;
 
+type ModalType = typeof modalTypes[number];
 type InitializerObject = { [key in ModalType]: typeof dummyData };
 
-// https://stackoverflow.com/questions/54789406/convert-array-to-object-keys
-const modalSettingDefaultObject = modalTypes.reduce((currentObj, currentKey) => (currentObj[currentKey] = dummyData, currentObj), {} as InitializerObject);
+const setDummyDataForInitialContextState = (state: InitializerObject, keyToSet: ModalType): InitializerObject => {
+  state[keyToSet] = dummyData;
+  return state;
+};
 
-type ModalType = typeof modalTypes[number];
+const modalSettingDefaultObject = modalTypes.reduce(setDummyDataForInitialContextState, {} as InitializerObject);
 
 export const ModalContext = React.createContext<{
   showModal: ( modalContent: ModalContents) => void,
@@ -37,21 +38,21 @@ export type ModalContents = {
   body?: string
   showSpinner?: boolean
   showConfirmButton?: boolean
-  onConfirmArg?: () => void
+  onConfirm?: () => void
 };
 
 export type ModalSettings = Record<ModalType, RequireAtLeastOne<ModalContents, 'showSpinner' | 'showConfirmButton'>>;
 
 export const ModalWrapper = ({ children }: Props) => {
 
-  const [modalValue, setModalValue] = useState<ModalContents & { onConfirmArg: () => void }>();
+  const [modalValue, setModalValue] = useState<ModalContents>();
   const { translation } = useContext(TranslationContext);
 
   // we pass a "modalSettings" into openModal so that we can configure it when we need it
   const openModal = (modalContent: ModalContents) => {
     setModalValue({
-      ...modalContent, onConfirmArg: () => {
-        modalContent.onConfirmArg && modalContent.onConfirmArg();
+      ...modalContent, onConfirm: () => {
+        modalContent.onConfirm && modalContent.onConfirm();
         closeModal();
       }
     });
