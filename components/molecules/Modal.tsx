@@ -4,7 +4,7 @@ import { ModalContents } from '../page_wrappers/ModalWrapper';
 import { TranslationContext } from '../page_wrappers/TranslationsWrapper';
 
 type Props = {
-  data: ModalContents & { onConfirmArg: () => void }
+  data: ModalContents
 };
 export const Modal = ({ data }: Props) => {
   const { translation } = useContext(TranslationContext);
@@ -18,7 +18,7 @@ export const Modal = ({ data }: Props) => {
         <br/>
         { data.body }
         { data.showSpinner && <CircularProgress /> }
-        { data.showConfirmButton && (<Button onClick={ () => data.onConfirmArg() }>
+        { data.showConfirmButton && (<Button onClick={ () => data.onConfirmArg && data.onConfirmArg() }>
           { translation.modalOKButton }
         </Button>) }
       </div>
