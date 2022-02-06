@@ -41,6 +41,7 @@ export type LanguageSpecificTranslation = {
     title: string
     description: string
   }
+  modalOKButton: string
 };
 
 const enTranslations: LanguageSpecificTranslation = {
@@ -79,7 +80,8 @@ const enTranslations: LanguageSpecificTranslation = {
   loginSEO: {
     title: 'Login',
     description: 'Login to your NPM account'
-  }
+  },
+  modalOKButton: 'OK'
 };
 
 const jaTranslations: LanguageSpecificTranslation = {
@@ -118,7 +120,8 @@ const jaTranslations: LanguageSpecificTranslation = {
   loginSEO: {
     title: 'ログイン',
     description: 'NPMアカウントにログインする'   
-  }
+  },
+  modalOKButton: 'OK'
 };
 
 type MasterTranslations = Record<SupportedLocale, LanguageSpecificTranslation>;
