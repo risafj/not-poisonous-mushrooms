@@ -41,6 +41,14 @@ export type LanguageSpecificTranslation = {
     title: string
     description: string
   }
+  modalOKButton: string,
+  waitingForMushroomsModal: {
+    body: string
+  },
+  noMoreMushroomsModal: {
+    title: string
+    body: string
+  },
 };
 
 const enTranslations: LanguageSpecificTranslation = {
@@ -79,6 +87,12 @@ const enTranslations: LanguageSpecificTranslation = {
   loginSEO: {
     title: 'Login',
     description: 'Login to your NPM account'
+  },
+  modalOKButton: 'OK',
+  waitingForMushroomsModal: { body: 'Waiting for those delicious mushrooms' },
+  noMoreMushroomsModal: {
+    title: 'PANIC',
+    body: 'There are no more mushrooms. We\'re sorry for your loss.'
   }
 };
 
@@ -113,11 +127,17 @@ const jaTranslations: LanguageSpecificTranslation = {
   footer: { credits: '里咲、そして露舞' },
   homepageSEO: {
     title: 'Not poisonous mushrooms - きのこが毎月届くサービス',
-    description: '毒が入ってない厳選されたきのこを毎月お家にお届けします！'  
+    description: '毒が入ってない厳選されたきのこを毎月お家にお届けします！'
   },
   loginSEO: {
     title: 'ログイン',
-    description: 'NPMアカウントにログインする'   
+    description: 'NPMアカウントにログインする'
+  },
+  modalOKButton: 'OK',
+  waitingForMushroomsModal: { body: 'キノコをネットから読み込み中です！' },
+  noMoreMushroomsModal: {
+    title: '大問題！',
+    body: 'キノコの在庫がありません。早起きは三文の徳。'
   }
 };
 
