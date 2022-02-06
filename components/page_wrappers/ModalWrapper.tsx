@@ -5,33 +5,32 @@ import { TranslationContext } from './TranslationsWrapper';
 
 // all context must be type-safe initialized
 // this could be put elsewhere if it were large
-const ModalSettingDefaultObject: ModalSettings = {
-  WAITING_FOR_MUSHROOMS: {
-    title: 'UNSET',
-    showSpinner: true
-  },
-  NO_MUSHROOMS_AVAILABLE: {
-    title: 'UNSET',
-    showSpinner: true
-  }
-};
-
-export const ModalContext = React.createContext<{
-  showModal: ( modalContent: ModalContents) => void,
-  closeModal: () => void,
-  modalSettings: ModalSettings
-}>({ showModal: () => null, closeModal: () => null, modalSettings: ModalSettingDefaultObject });
-
-type Props = {
-  children: any
+const dummyData = {
+  title: 'UNSET',
+  showSpinner: true
 };
 
 const WAITING_FOR_MUSHROOMS = 'WAITING_FOR_MUSHROOMS';
 const NO_MUSHROOMS_AVAILABLE = 'NO_MUSHROOMS_AVAILABLE';
 
-type ModalTypes =
-  typeof WAITING_FOR_MUSHROOMS |
-  typeof NO_MUSHROOMS_AVAILABLE; 
+const modalTypes = [WAITING_FOR_MUSHROOMS, NO_MUSHROOMS_AVAILABLE] as const;
+
+type InitializerObject = { [key in ModalType]: typeof dummyData };
+
+// https://stackoverflow.com/questions/54789406/convert-array-to-object-keys
+const modalSettingDefaultObject = modalTypes.reduce((currentObj, currentKey) => (currentObj[currentKey] = dummyData, currentObj), {} as InitializerObject);
+
+type ModalType = typeof modalTypes[number];
+
+export const ModalContext = React.createContext<{
+  showModal: ( modalContent: ModalContents) => void,
+  closeModal: () => void,
+  modalSettings: ModalSettings
+}>({ showModal: () => null, closeModal: () => null, modalSettings: modalSettingDefaultObject });
+
+type Props = {
+  children: any
+};
 
 export type ModalContents = {
   title?: string
@@ -41,7 +40,7 @@ export type ModalContents = {
   onConfirmArg?: () => void
 };
 
-export type ModalSettings = Record<ModalTypes, RequireAtLeastOne<ModalContents, 'showSpinner' | 'showConfirmButton'>>;
+export type ModalSettings = Record<ModalType, RequireAtLeastOne<ModalContents, 'showSpinner' | 'showConfirmButton'>>;
 
 export const ModalWrapper = ({ children }: Props) => {
 
@@ -77,7 +76,7 @@ export const ModalWrapper = ({ children }: Props) => {
   return (
     <ModalContext.Provider value={ { showModal: openModal, closeModal, modalSettings } } >
       <>
-        { children } 
+        { children }
         { modalValue && <Modal data={ modalValue }/> }
       </>
     </ModalContext.Provider>
